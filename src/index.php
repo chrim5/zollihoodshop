@@ -4,18 +4,30 @@
 </head>
 <body>
 <?php
-$servername = $_ENV["MYSQL_PORT_3306_TCP_ADDR"];
-$username = "root";
-$password = $_ENV["MYSQL_ENV_MYSQL_ROOT_PASSWORD"];
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+require 'db.php';
 ?>
+
+
+<div class="container">
+    <header>
+        <h1>Amazing Outstanding Computershop</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Bla 1</a></li>
+        <li><a href="#">Bla 2</a></li>
+        <li><a href="#">Bla 3</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Artikel 1</h1>
+      <p>Blaaa blaaaa blaaaaa </p>
+    </article>
+
+    <footer>Copyright © nobody</footer>
+
+</div>
 </body>
 </html>
