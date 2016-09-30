@@ -1,5 +1,5 @@
 <?php
 require 'db.php';
-readfile('main.html');
+readfile('index.html');
 ?>
 
