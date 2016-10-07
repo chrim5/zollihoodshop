@@ -69,8 +69,7 @@
 					<div class="cl">&nbsp;</div>
 				</div>
 				<!-- End Products -->
-
+                <?php require_once ('footer.php') ?>
 			</div>
 			<!-- End Content -->
 
-<?php require_once ('footer.php') ?>
