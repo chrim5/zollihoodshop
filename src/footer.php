@@ -27,7 +27,18 @@
 
 							<label>Category</label>
 							<select class="field">
-							<option value="">-- Select Category --</option>
+                            <!-- Fixme with DB shizzle -->
+                            <?php
+                                $categories= array("Art and Photography", 
+                                                   "Food and Wine", 
+                                                   "History", 
+                                                   "Literature and Fiction", 
+                                                   "Sci-Fi and Fantasy", 
+                                                   "Technology");
+                                foreach ($categories as $key => $value) {
+							        echo "<option value=\"\">$value</option>";
+                                }
+                            ?>
 						</select>
 
 							<div class="inline-field">
