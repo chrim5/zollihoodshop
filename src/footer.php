@@ -58,12 +58,15 @@
 					<h2>Categories <span></span></h2>
 					<div class="box-content">
 						<ul>
-							<li><a href="#">Art and Photography</a></li>
-							<li><a href="#">Food and Wine</a></li>
-							<li><a href="#">History</a></li>
-							<li><a href="#">Literature and Fiction</a></li>
-							<li><a href="#">Sci-Fi and Fantasy</a></li>
-							<li class="last"><a href="#">Technology</a></li>
+                            <?php
+                                $categories= array("Art and Photography", 
+                                                   "Food and Wine", 
+                                                   "History", 
+                                                   "Literature and Fiction", 
+                                                   "Sci-Fi and Fantasy", 
+                                                   "Technology");
+                                Navigation::GenerateCategoryList($categories);
+                            ?>
 						</ul>
 					</div>
 				</div>
