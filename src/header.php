@@ -1,3 +1,4 @@
+<?php require_once ('navigation.php') ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -37,14 +38,7 @@
 				<ul>
 				<?php
 					$menuitems = array("Index", "Support", "Account", "Contact");
-					foreach ($menuitems as $key => $value) {
-                        $menuitem = strtolower($value);
-                        if ($value === $sitename)
-						    echo "<li><a href=\"$menuitem.php\" class=\"active\">$value</a></li>";
-                        else
-                     		echo "<li><a href=\"$menuitem.php\">$value</a></li>";
-       
-					}
+                    Navigation::GenerateMenu($menuitems);
 				?>
 				</ul>
 			</div>
