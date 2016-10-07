@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>MMs Book Store</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="icon" type="image/ico" href="css/images/favicon.ico">
 
 	<!-- JS -->
 	<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
