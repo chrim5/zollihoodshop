@@ -219,6 +219,10 @@
 				<a href="#">About us</a>
 				<span>|</span>
 				<a href="#">Contact</a>
+				<span>|</span>
+                <a href="index.php?lang=en"><img src="css/images/en.png" /></a>
+				<span>|</span>
+                <a href="index.php?lang=de"><img src="css/images/de.png" /></a>
 			</p>
 			<p class="right">
 				&copy; 2016 MMs Book Store Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>

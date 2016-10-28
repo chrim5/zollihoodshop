@@ -1,3 +1,4 @@
+<?php require_once ('lang.php') ?>
 <?php require_once ('navigation.php') ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,7 +39,7 @@
 			<div id="navigation">
 				<ul>
 				<?php
-					$menuitems = array("Index", "Support", "Account", "Contact");
+					$menuitems = array($lang['MENU_HOME'], $lang['MENU_SUPPORT'], $lang['MENU_ACCOUNT'], $lang['MENU_CONTACT_US']);
                     Navigation::GenerateMenu($menuitems);
 				?>
 				</ul>
