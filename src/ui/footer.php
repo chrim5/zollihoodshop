@@ -29,12 +29,14 @@
 							<select class="field">
                             <!-- Fixme with DB shizzle -->
                             <?php
+								require_once("classes/category.class.php");
                                 $categories= array("Art and Photography", 
                                                    "Food and Wine", 
                                                    "History", 
                                                    "Literature and Fiction", 
                                                    "Sci-Fi and Fantasy", 
                                                    "Technology");
+								$categories = Category::getCategories();
                                 foreach ($categories as $key => $value) {
 							        echo "<option value=\"\">$value</option>";
                                 }
@@ -76,6 +78,7 @@
                                                    "Literature and Fiction", 
                                                    "Sci-Fi and Fantasy", 
                                                    "Technology");
+								$categories = Category::getCategories();				   
                                 Navigation::GenerateCategoryList($categories);
                             ?>
 						</ul>
