@@ -1,5 +1,5 @@
 <?php $sitename = "Support" ?>
-<?php require_once ('header.php') ?>
+<?php require_once ('ui/header.php') ?>
 
 Products
 
@@ -78,4 +78,4 @@ Products
     }
 ?>
 
-<?php require_once ('footer.php') ?>
+<?php require_once ('ui/footer.php') ?>

@@ -1,6 +1,6 @@
 <?php $sitename = "My Account" ?>
-<?php require_once ('header.php') ?>
+<?php require_once ('ui/header.php') ?>
 
 account
 
-<?php require_once ('footer.php') ?>
+<?php require_once ('ui/footer.php') ?>
