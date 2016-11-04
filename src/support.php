@@ -3,9 +3,8 @@
 
 support
 <?php 
-    require_once("db.php");
-    $db = DB::getInstance();
-    $db->getConnection();
+    require_once("classes/category.class.php");
+    var_dump(Category::getCategories());
  ?>
 
 
