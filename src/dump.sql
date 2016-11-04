@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `myapp` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `myapp`;
 -- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
 --
 -- Host: 127.0.0.1    Database: myapp
@@ -18,6 +16,31 @@ USE `myapp`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'CategoryA'),(2,'CategoryB'),(3,'CategoryC');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -30,8 +53,11 @@ CREATE TABLE `products` (
   `details` varchar(999) CHARACTER SET latin1 NOT NULL,
   `price` int(11) NOT NULL,
   `reducedprice` int(11) DEFAULT NULL,
+  `category` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `category_idx` (`category`),
+  CONSTRAINT `fk_category` FOREIGN KEY (`category`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +67,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Testbook1','Blablablablablabla',220,NULL),(2,'Testbook2','Blablablablablabla',123,NULL);
+INSERT INTO `products` VALUES (1,'Blaa','abc',123,NULL,1),(2,'Blubb','abc',123,NULL,2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-04 15:43:12
+-- Dump completed on 2016-11-04 16:31:56
