@@ -9,6 +9,10 @@ class Category
         return $this->name;
     }
 
+    public function getId(){
+        return $this->id;
+    }
+
     public static function getCategories(){
         $categories = array();
 
@@ -22,6 +26,5 @@ class Category
         return $categories;
 
     }
-
 }
 ?>

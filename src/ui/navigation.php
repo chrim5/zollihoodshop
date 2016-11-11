@@ -11,7 +11,7 @@
         }
         public static function GenerateCategoryList($categories) {
             foreach ($categories as $key => $value) {
-                $menuitem = strtolower($value);
+                $menuitem = strtolower($value->getId());
                 $category_querystring = preg_replace("/ /", "_", $menuitem);
                 echo "<li><a href=\"products.php?category=$category_querystring\">$value</a></li>";
             }

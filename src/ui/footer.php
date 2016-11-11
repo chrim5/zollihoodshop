@@ -72,12 +72,6 @@
 					<div class="box-content">
 						<ul>
                             <?php
-                                $categories= array("Art and Photography", 
-                                                   "Food and Wine", 
-                                                   "History", 
-                                                   "Literature and Fiction", 
-                                                   "Sci-Fi and Fantasy", 
-                                                   "Technology");
 								$categories = Category::getCategories();				   
                                 Navigation::GenerateCategoryList($categories);
                             ?>
