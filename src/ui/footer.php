@@ -222,7 +222,7 @@
                 <a href="index.php?lang=de"><img src="css/images/de.png" /></a>
 			</p>
 			<p class="right">
-				&copy; 2016 MMs Book Store Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
+				&copy; 2016 MMs Book Store 
 			</p>
 		</div>
 		<!-- End Footer -->
