@@ -14,7 +14,7 @@ class User
 
         $db = DB::getInstance();
         $stmt = $db->getConnection()->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->bind_param('i', $searchemail);
+        $stmt->bind_param('s', $searchemail);
         $stmt->execute();
 
         $result = $stmt->get_result();

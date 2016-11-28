@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("classes/user.class.php");
 
 //User::createUser() to create a test user
@@ -7,7 +7,9 @@ require_once("classes/user.class.php");
 $user = User::getUser($_POST["username"]);
 if (password_verify($_POST["password"],$user->getPassword()))
 {
-    echo "GOOD PASSWORD";
+    $_SESSION['username'] = $_POST["username"];
+    header('Location: /' );
+    die();
 }
 else
 {
