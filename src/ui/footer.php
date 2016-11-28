@@ -8,11 +8,11 @@
 				<div class="box login">
 					<h2>Login<span></span></h2>
 					<div class="login-content">
-						<form action="" method="post">
+						<form action="login.php" method="post">
 							<label>Username or E-Mail</label><br/>
-							<input type="text" class="field" /><br />
+							<input type="text" name="username" class="field" /><br />
 							<label>Password</label><br/>
-							<input type="password" class="field" />
+							<input type="password" name="password" class="field" />
 					</div>
 				</div>
 
