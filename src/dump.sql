@@ -97,6 +97,7 @@ CREATE TABLE `users` (
 --
 
 LOCK TABLES `users` WRITE;
+INSERT INTO users(email,firstname,lastname,admin,password) VALUES ("blubb", "b", "b", 1, "$2y$10$4GGK1NvIQD4VwuEFsWMxuOPov7kH6RKYLQBBVsGMjvT..3g5UWBF.");
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
