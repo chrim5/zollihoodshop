@@ -27,7 +27,7 @@
 
 			<!-- Cart -->
 			<div id="cart">
-				<a href="#" class="cart-link">Shopping cart</a>
+				<a href="/cart" class="cart-link">Shopping cart</a>
 				<div class="cl">&nbsp;</div>
 				<span>Article: <strong>4</strong></span>
 				<span>Total: <strong>111.00 CHF</strong></span>
