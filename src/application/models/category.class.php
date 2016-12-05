@@ -1,5 +1,5 @@
 <?php
-require_once("db.php");
+require_once("application/db/db.php");
 
 class Category
 {

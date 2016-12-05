@@ -1,6 +1,3 @@
-			</div>
-			<!-- End Content -->
-        
         	<!-- Sidebar -->
 			<div id="sidebar">
 
@@ -8,20 +5,20 @@
 				<div class="box login">
 					<h2>Login<span></span></h2>
 					<div class="login-content">
-<?php
-    if (isset($_SESSION['username'])) {
-        echo "Herzlich Willkommen ".$_SESSION['username'];
-        echo '<a href="logout.php">logout</a>';
-    } else {
-?>
-						<form action="login.php" method="post">
-							<label>Username or E-Mail</label><br/>
-							<input type="text" name="username" class="field" /><br />
-							<label>Password</label><br/>
-                            <input type="password" name="password" class="field" />
-<?php
-    }
-?>
+                        <?php
+                            if (isset($_SESSION['username'])) {
+                                echo "Herzlich Willkommen ".$_SESSION['username'];
+                                echo '<a href="logout.php">logout</a>';
+                            } else {
+                        ?>
+                                                <form action="login.php" method="post">
+                                                    <label>Username or E-Mail</label><br/>
+                                                    <input type="text" name="username" class="field" /><br />
+                                                    <label>Password</label><br/>
+                                                    <input type="password" name="password" class="field" />
+                        <?php
+                            }
+                        ?>
 					</div>
 				</div>
 
@@ -36,15 +33,8 @@
 
 							<label>Category</label>
 							<select class="field">
-                            <!-- Fixme with DB shizzle -->
                             <?php
-								require_once("classes/category.class.php");
-                                $categories= array("Art and Photography", 
-                                                   "Food and Wine", 
-                                                   "History", 
-                                                   "Literature and Fiction", 
-                                                   "Sci-Fi and Fantasy", 
-                                                   "Technology");
+                                require_once("application/models/category.class.php");
 								$categories = Category::getCategories();
                                 foreach ($categories as $key => $value) {
 							        echo "<option value=\"\">$value</option>";
@@ -81,6 +71,7 @@
 					<div class="box-content">
 						<ul>
                             <?php
+                                require_once("application/views/_templates/navigation.php");
 								$categories = Category::getCategories();				   
                                 Navigation::GenerateCategoryList($categories);
                             ?>
