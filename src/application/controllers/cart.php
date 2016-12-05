@@ -15,6 +15,8 @@ class Cart
 
     public function add($productId)
     {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
         require APP . 'models/product.php';
         require APP . 'models/cart.php';
         
@@ -27,6 +29,8 @@ class Cart
 
     public function clear()
     {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
         require APP . 'models/cart.php';
         $Cart = new CartModel();
         $Cart->clearAll();
