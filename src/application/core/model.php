@@ -8,7 +8,7 @@ class Model
 
     function __construct()
     {
-        require APP . '/db/db.php';
+        require_once APP . '/db/db.php';
         $this->db = DB::getInstance()->getConnection();
     }
 }

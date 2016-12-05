@@ -6,12 +6,30 @@ class Cart
         require APP . 'models/cart.php';
         
         $Product = new CartModel();
-        $Product->addToCart("test");
         $cart = $Product->getCartProducts();
 
         require APP . 'views/_templates/header.php';
         require APP . 'views/cart/index.php';
         require APP . 'views/_templates/footer.php';
+    }
+
+    public function add($productId)
+    {
+        require APP . 'models/product.php';
+        require APP . 'models/cart.php';
+        
+        $Product = new ProductModel();
+        $p = $Product->getProductById($productId);
+
+        $Cart = new CartModel();
+        $Cart->addToCart($p);
+    }
+
+    public function clear()
+    {
+        require APP . 'models/cart.php';
+        $Cart = new CartModel();
+        $Cart->clearAll();
     }
 
     public function cartjson()
@@ -21,8 +39,8 @@ class Cart
         
         $Product = new CartModel();
 
-        $priceTotal = 111;
         $productsTotal = $Product->getCartItemsTotal();
+        $priceTotal = $Product->getCartPriceTotal();
         
         $data = ["price" => $priceTotal, "products" => $productsTotal];
 

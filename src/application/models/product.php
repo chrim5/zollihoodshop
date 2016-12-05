@@ -30,4 +30,22 @@ class ProductModel extends Model
         }
         return $products;
     }
+
+    public function getProductById($product_id)
+    {
+        $products = array(); 
+
+        $stmt = $this->db->prepare("SELECT * FROM products WHERE id = ?");
+        $stmt->bind_param('i', $product_id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        if (!$result) return null;
+
+        while($product = $result->fetch_object("ProductObj")){
+            $products[] = $product;
+        }
+        return $products[0];
+    }
 }
