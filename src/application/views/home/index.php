@@ -66,6 +66,4 @@
         <div class="cl">&nbsp;</div>
     </div>
     <!-- End Products -->
-</div>
-<!-- End Content -->
 

@@ -1,3 +1,5 @@
+            </div>
+            <!-- End Content -->
         	<!-- Sidebar -->
 			<div id="sidebar">
 
