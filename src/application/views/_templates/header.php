@@ -1,5 +1,4 @@
-<?php require_once ('lang.php') ?>
-<?php require_once ('ui/navigation.php') ?>
+<?php require APP . 'views/_templates/lang.php' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -31,7 +30,7 @@
 				<a href="#" class="cart-link">Shopping cart</a>
 				<div class="cl">&nbsp;</div>
 				<span>Article: <strong>4</strong></span>
-				<span>Total: <strong>250.00 CHF</strong></span>
+				<span>Total: <strong>111.00 CHF</strong></span>
 			</div>
 			<!-- End Cart -->
 
@@ -39,8 +38,18 @@
 			<div id="navigation">
 				<ul>
 				<?php
-					$menuitems = array($lang['MENU_HOME'], $lang['MENU_SUPPORT'], $lang['MENU_ACCOUNT'], $lang['MENU_CONTACT_US']);
-                    Navigation::GenerateMenu($menuitems);
+$menuitems = ["home" => $lang['MENU_HOME'],
+    "product" => $lang['MENU_PRODUCTS'],
+    "account" => $lang['MENU_ACCOUNT'], 
+    "contact" => $lang['MENU_CONTACT_US']];
+
+            foreach ($menuitems as $key => $value) {
+                $menuitem = strtolower($key);
+                if ($value === $sitename)
+                    echo "<li><a href=\"$menuitem\" class=\"active\">$value</a></li>";
+                else
+                    echo "<li><a href=\"$menuitem\">$value</a></li>";
+            }
 				?>
 				</ul>
 			</div>
