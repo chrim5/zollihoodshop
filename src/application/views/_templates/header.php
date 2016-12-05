@@ -11,7 +11,8 @@
 	<!-- JS -->
 	<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
 	<script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-	<script src="js/jquery-func.js" type="text/javascript"></script>
+    <script src="js/jquery-func.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
 	<!-- End JS -->
 
 </head>
@@ -29,8 +30,8 @@
 			<div id="cart">
 				<a href="/cart" class="cart-link">Shopping cart</a>
 				<div class="cl">&nbsp;</div>
-				<span>Article: <strong>4</strong></span>
-				<span>Total: <strong>111.00 CHF</strong></span>
+				<span>Article: <strong id="cartproducts">4</strong></span>
+				<span>Total: <strong id="cartprice">111.00 CHF</strong></span>
 			</div>
 			<!-- End Cart -->
 
