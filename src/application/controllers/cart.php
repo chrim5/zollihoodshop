@@ -17,9 +17,12 @@ class Cart
     public function cartjson()
     {
         header('Content-Type: application/json');
+        require APP . 'models/cart.php';
+        
+        $Product = new CartModel();
 
         $priceTotal = 111;
-        $productsTotal = 3;
+        $productsTotal = $Product->getCartItemsTotal();
         
         $data = ["price" => $priceTotal, "products" => $productsTotal];
 

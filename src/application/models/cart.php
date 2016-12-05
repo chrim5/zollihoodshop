@@ -25,9 +25,10 @@ class CartModel extends Model
         return $cart;
     }
 
-    public function getCartPriceTotal()
+    public function getCartItemsTotal()
     {
-        return 0;
+        $cart = $this->getSessionCart();
+        return count($cart);
     }
 
     public function addToCart($obj)
