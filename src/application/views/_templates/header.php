@@ -5,14 +5,14 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>MMs Book Store</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <link rel="icon" type="image/ico" href="css/images/favicon.ico">
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <link rel="icon" type="image/ico" href="/css/images/favicon.ico">
 
 	<!-- JS -->
-	<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-    <script src="js/jquery-func.js" type="text/javascript"></script>
-    <script src="js/scripts.js" type="text/javascript"></script>
+	<script src="/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+    <script src="/js/jquery-func.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
 	<!-- End JS -->
 
 </head>
@@ -24,7 +24,7 @@
 
 		<!-- Header -->
 		<div id="header">
-            <h1 id="logo"><a href="index.php"></a></h1>
+            <h1 id="logo"><a href="/home"></a></h1>
 
 			<!-- Cart -->
 			<div id="cart">
@@ -47,9 +47,9 @@ $menuitems = ["home" => $lang['MENU_HOME'],
             foreach ($menuitems as $key => $value) {
                 $menuitem = strtolower($key);
                 if ($value === $sitename)
-                    echo "<li><a href=\"$menuitem\" class=\"active\">$value</a></li>";
+                    echo "<li><a href=\"/$menuitem\" class=\"active\">$value</a></li>";
                 else
-                    echo "<li><a href=\"$menuitem\">$value</a></li>";
+                    echo "<li><a href=\"/$menuitem\">$value</a></li>";
             }
 				?>
 				</ul>

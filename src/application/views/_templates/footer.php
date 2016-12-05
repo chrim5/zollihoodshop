@@ -36,7 +36,7 @@
 							<label>Category</label>
 							<select class="field">
                             <?php
-                                require_once("application/models/category.class.php");
+                                require APP . 'models/category.class.php';
 								$categories = Category::getCategories();
                                 foreach ($categories as $key => $value) {
 							        echo "<option value=\"\">$value</option>";
@@ -73,7 +73,7 @@
 					<div class="box-content">
 						<ul>
                             <?php
-                                require_once("application/views/_templates/navigation.php");
+                                require APP . 'views/_templates/navigation.php';
 								$categories = Category::getCategories();				   
                                 Navigation::GenerateCategoryList($categories);
                             ?>
@@ -97,67 +97,67 @@
 				<div class="more-products-holder">
 					<ul>
 						<li>
-							<a href="#"><img src="css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/bauernleben_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/mind_control_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/bauernleben_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/mind_control_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/bauernleben_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/mind_control_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
 						</li>
 						<li>
-							<a href="#"><img src="css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
 						</li>
 						<li class="last">
-							<a href="#"><img src="css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
+							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
 						</li>
 					</ul>
 				</div>
@@ -219,9 +219,9 @@
 				<span>|</span>
 				<a href="#">Contact</a>
 				<span>|</span>
-                <a href="index.php?lang=en"><img src="css/images/en.png" /></a>
+                <a href="index.php?lang=en"><img src="/css/images/en.png" /></a>
 				<span>|</span>
-                <a href="index.php?lang=de"><img src="css/images/de.png" /></a>
+                <a href="index.php?lang=de"><img src="/css/images/de.png" /></a>
 			</p>
 			<p class="right">
 				&copy; 2016 MMs Book Store 
