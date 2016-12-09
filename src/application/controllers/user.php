@@ -20,7 +20,7 @@ class User
         require APP . 'views/_templates/footer.php';
     }
 
-    public function new()
+    public function create()
     {
         require APP . 'models/user.php';
         require_once APP . 'models/user.class.php';

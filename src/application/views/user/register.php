@@ -1,4 +1,4 @@
-<form action="/user/new" method="post">
+<form action="/user/create" method="post">
   First name:<br>
   <input type="text" name="firstname"><br>
   Last name:<br>
