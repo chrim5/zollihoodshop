@@ -31,11 +31,22 @@ class UserModel extends Model
         return $users[0];
     }
 
-    public function createNew(){
-        $db = DB::getInstance();
-        $stmt = $db->getConnection()->prepare('INSERT INTO 
+    public function createNew($user){
+        $stmt = $this->db->prepare('INSERT INTO
             users(email,firstname,lastname,admin,password) 
-            VALUES ("blubb", "b", "b", 1, "s")');
+            VALUES (?, ?, ?, 0, ?)');
+        $stmt->bind_param('ssss', $user->email, $user->firstname, 
+            $user->lastname, $user->getPassword() );
+        $stmt->execute();
+    }
+
+    public function save($user){
+        $stmt = $this->db->prepare('UPDATE users
+            set email=? , firstname=? , lastname=? , admin=? , password=?
+            WHERE id=?');
+        $stmt->execute();
+        $stmt->bind_param('sssisi', $user->email, $user->firstname, 
+            $user->lastname, $user->admin, $user->password, $user->id);
         $stmt->execute();
     }
 }

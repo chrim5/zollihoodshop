@@ -15,14 +15,25 @@ class User
 
     public function register()
     {
-        require APP . 'models/user.php';
-        
-        $User = new UserModel();
-        $users = $User->getUsers();
-
         require APP . 'views/_templates/header.php';
         require APP . 'views/user/register.php';
         require APP . 'views/_templates/footer.php';
+    }
+
+    public function new()
+    {
+        require APP . 'models/user.php';
+        require_once APP . 'models/user.class.php';
+
+        $u = new UserObj();
+        $u->email = $_POST["email"];
+        $u->firstname = $_POST["firstname"];
+        $u->lastname = $_POST["lastname"];
+        $u->savePassword($_POST["password"]);
+    
+        $User = new UserModel();
+        $User->createNew($u);
+        header('Location: /' );
     }
 
     public function login()

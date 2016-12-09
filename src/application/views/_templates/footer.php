@@ -19,6 +19,7 @@
                                 <label>Password</label><br/>
                                 <input type="password" name="password" class="field" />
                         <?php
+                                echo '<a href="/user/register">register</a>';
                             }
                         ?>
 					</div>
