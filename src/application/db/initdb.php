@@ -1,5 +1,6 @@
 <?php
 require_once("db.php");
+//require APP . 'db.php';
 
 /**
  * Import SQL from file
@@ -141,6 +142,6 @@ $mysqli = $db->getConnection();
 $mysqli->set_charset("utf8");
 
 header('Content-Type: text/html;charset=utf-8');
-sqlImport('dump.sql');
+sqlImport('../../dump.sql');
 
 echo "Peak MB: ", memory_get_peak_usage(true)/1024/1024;
