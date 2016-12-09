@@ -1,7 +1,7 @@
 <?php
-require_once("db.php");
+require_once("application/db/db.php");
 
-class User
+class UserObj
 {
     private $id,$email,$firstname,$lastname,$admin,$password;
 
@@ -9,23 +9,6 @@ class User
         return $this->email;
     }
 
-    public static function getUser($searchemail){
-        $users = array(); 
-
-        $db = DB::getInstance();
-        $stmt = $db->getConnection()->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->bind_param('s', $searchemail);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-
-        if (!$result) return null;
-
-        while($product = $result->fetch_object(get_class())){
-            $products[] = $product;
-        }
-        return $products[0];
-    }
 
     public function getPassword(){
         return $this->password;
@@ -44,14 +27,6 @@ class User
         $stmt->execute();
         $stmt->bind_param('sssisi', $this->email, $this->firstname, 
             $this->lastname, $this->admin, $this->password, $this->id);
-        $stmt->execute();
-    }
-
-    public static function createUser(){
-        $db = DB::getInstance();
-        $stmt = $db->getConnection()->prepare('INSERT INTO 
-            users(email,firstname,lastname,admin,password) 
-            VALUES ("blubb", "b", "b", 1, "s")');
         $stmt->execute();
     }
 }

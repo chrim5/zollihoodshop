@@ -10,14 +10,14 @@
                         <?php
                             if (isset($_SESSION['username'])) {
                                 echo "Herzlich Willkommen ".$_SESSION['username'];
-                                echo '<a href="logout.php">logout</a>';
+                                echo '<a href="/user/logout">logout</a>';
                             } else {
                         ?>
-                                                <form action="login.php" method="post">
-                                                    <label>Username or E-Mail</label><br/>
-                                                    <input type="text" name="username" class="field" /><br />
-                                                    <label>Password</label><br/>
-                                                    <input type="password" name="password" class="field" />
+                            <form action="/user/login" method="post">
+                                <label>Username or E-Mail</label><br/>
+                                <input type="text" name="username" class="field" /><br />
+                                <label>Password</label><br/>
+                                <input type="password" name="password" class="field" />
                         <?php
                             }
                         ?>
