@@ -14,6 +14,17 @@ class ProductModel extends Model
         return $products;
     }
 
+    public function getCategories(){
+        $products = array();
+        $res = $this->db->query("SELECT * FROM categories");
+        if (!$res) return null;
+
+        while($cat = $res->fetch_object()){
+            $categories[] = $cat;
+        }
+        return $categories;
+    }
+
     public function getProductsByCategory($category_id){
         $products = array(); 
 
@@ -47,5 +58,14 @@ class ProductModel extends Model
             $products[] = $product;
         }
         return $products[0];
+    }
+
+    public function createNew($product){
+        $stmt = $this->db->prepare('INSERT INTO
+            products(name,details,price,reducedprice,category) 
+            VALUES (?, ?, ?, ?, ?)');
+        $stmt->bind_param('ssiii', $product->name, $product->details, $product->price, 
+            $product->reducedprice, $product->category);
+        $stmt->execute();
     }
 }
