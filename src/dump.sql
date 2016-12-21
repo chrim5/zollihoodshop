@@ -56,6 +56,7 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `reducedprice` int(11) DEFAULT NULL,
   `category` int(11) NOT NULL,
+  `imageblob` longblob,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `category_idx` (`category`),
@@ -69,7 +70,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Blaa','abc',123,NULL,1),(2,'Blubb','abc',123,NULL,2);
+INSERT INTO `products` VALUES (1,'Blaa','abc',123,NULL,1, null),(2,'Blubb','abc',123,NULL,2, null);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
