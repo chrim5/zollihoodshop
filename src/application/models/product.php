@@ -68,4 +68,27 @@ class ProductModel extends Model
             $product->reducedprice, $product->category);
         $stmt->execute();
     }
+
+    public function getBinary($productid)
+    {
+        $stmt = $this->db->prepare("SELECT imageblob FROM products WHERE id=?"); 
+        $stmt->bind_param("i", $productid);
+
+        $stmt->execute();
+        $stmt->store_result();
+
+        $stmt->bind_result($image);
+        $stmt->fetch();
+        return $image;
+    }
+
+    public function uploadBinary ($productid, $binary)
+    {
+        $stmt = $this->db->prepare('UPDATE products SET
+            imageblob = ?
+            WHERE id = ?');
+        $stmt->bind_param('bi',$null, $productid);
+        $stmt->send_long_data(0, $binary);
+        $stmt->execute();
+    }
 }

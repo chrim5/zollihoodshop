@@ -35,6 +35,35 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
+    public function addimage($productid)
+    {
+        require APP . 'views/_templates/header.php';
+        require APP . 'views/product/addimage.php';
+        require APP . 'views/_templates/footer.php';
+    }
+
+    public function image($productid)
+    {
+        require APP . 'models/product.php';
+
+        $Product = new ProductModel();
+        $image = $Product->getBinary($productid);
+        header("Content-Type: image/png");
+        echo $image;     
+    }
+
+    public function upload($productid)
+    {
+        require APP . 'models/product.php';
+
+        $Product = new ProductModel();
+
+        var_dump($_FILES);
+        $binary = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+
+        $Product->uploadBinary($productid, $binary);
+    }
+
     public function create()
     {
         require APP . 'models/product.php';
