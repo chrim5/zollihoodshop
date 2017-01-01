@@ -25,6 +25,19 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
+    public function search()
+    {
+        require APP . 'models/product.php';
+        
+        $product = new productmodel();
+        $searchterm = $_POST["term"];
+        $products = $product->getProductsBySearch($searchterm);
+
+        require APP . 'views/_templates/header.php';
+        require APP . 'views/product/index.php';
+        require APP . 'views/_templates/footer.php';
+    }
+
     public function additem()
     {
         require APP . 'models/product.php';

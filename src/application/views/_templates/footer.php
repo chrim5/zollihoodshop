@@ -29,10 +29,10 @@
 				<div class="box search">
 					<h2>Search by <span></span></h2>
 					<div class="box-content">
-						<form action="" method="post">
+						<form action="/product/search" method="post">
 
 							<label>Keyword</label>
-							<input type="text" class="field" />
+							<input type="text" name="term" class="field" />
 
 							<label>Category</label>
 							<select class="field">
@@ -57,12 +57,6 @@
 							</div>
 
 							<input type="submit" class="search-submit" value="Search" />
-
-							<p>
-								<a href="#" class="bul">Advanced search</a><br />
-								<a href="#" class="bul">Contact Customer Support</a>
-							</p>
-
 						</form>
 					</div>
 				</div>

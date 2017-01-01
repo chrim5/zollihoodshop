@@ -42,6 +42,24 @@ class ProductModel extends Model
         return $products;
     }
 
+    public function getProductsBySearch($searchterm){
+        $products = array(); 
+        $s = "%$searchterm%";
+
+        $stmt = $this->db->prepare("SELECT * FROM products WHERE name LIKE ? OR details LIKE ?");
+        $stmt->bind_param('ss', $s, $s);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        if (!$result) return null;
+
+        while($product = $result->fetch_object("ProductObj")){
+            $products[] = $product;
+        }
+        return $products;
+    }
+
     public function getProductById($product_id)
     {
         $products = array(); 
