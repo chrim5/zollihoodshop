@@ -1,27 +1,22 @@
 <div class="products">
-<table>
-  <thead align="left" style="display: table-header-group">
-  <tr>
-     <th>Num </th>
-     <th>Name</th>
-     <th>Price</th>
-     <th>Category</th>
-<th>Add</th>
-  </tr>
-  </thead>
-<tbody>
+<ul>
 <?php 
 $total = 0;
 foreach ($products as $rows) :?>
-  <tr class="item_row">
-        <td> <?php echo $rows->id; ?></td>
-        <td> <?php echo $rows->name; ?></td>
-        <td> <?php echo $rows->price; ?></td>
-        <td> <?php echo $rows->category; ?></td>
-        <td><a href="cart/add/<?php echo $rows->id; ?>">add</a></td>
-  </tr>
-</tbody>
-</table>
+    <li class="item">
+        <div class="itemwrapper">
+            <div class="leftiteminfo">
+                <img src="/product/image/<?php echo $rows->id; ?>" width="130">
+            </div>
+            <div class="rightiteminfo">
+<h2>
+                <?php echo $rows->name; ?>
+</h2>
+                <?php echo $rows->price; ?>
+                <a href="cart/add/<?php echo $rows->id; ?>">add to cart</a>
+            </div>
+        </div>
+    </li>
 <?php endforeach;?>
+</ul>
 </div>
-

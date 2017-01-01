@@ -378,7 +378,7 @@ a.bul {
 	padding: 1px;
 	border: solid 1px #dedede;
 	float: left;
-	width: 231px;
+	width: 700px;
 	margin-right: 9px;
 	height: 342px;
 	overflow: hidden;
@@ -554,3 +554,16 @@ h3.ico4 {
 #footer span {
 	padding: 0 2px;
 }
+
+.leftiteminfo {
+    width: 140px;
+    float:left; /* add this */
+}
+.rightiteminfo {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+
+
+
+
