@@ -104,7 +104,8 @@ CREATE TABLE `users` (
 --
 
 LOCK TABLES `users` WRITE;
-INSERT INTO users(email,firstname,lastname,admin,password) VALUES ("blubb", "b", "b", 1, "$2y$10$4GGK1NvIQD4VwuEFsWMxuOPov7kH6RKYLQBBVsGMjvT..3g5UWBF.");
+INSERT INTO myapp.users (email, firstname, lastname, admin, password) VALUES ('user@user.com', 'Hans', 'Muster', 0, '$2y$10$S.81nK4wLtT.4v4KteJcFOatWoPMS2.W513onOy0sn0905wBzAhUm');
+INSERT INTO myapp.users (email, firstname, lastname, admin, password) VALUES ('admin@admin.com', 'AdminHans', 'AdminMuster', 1, '$2y$10$6zW2HiwBsZIDk/UqDlBU8.ojt91Ovh4S///7aVv3XsqSyFtIcIz.m');
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
