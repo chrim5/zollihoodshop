@@ -31,8 +31,8 @@
 			<div id="cart">
 				<a href="/cart" class="cart-link">Shopping cart</a>
 				<div class="cl">&nbsp;</div>
-				<span>Article: <strong id="cartproducts">4</strong></span>
-				<span>Total: <strong id="cartprice">111.00 CHF</strong></span>
+				<span>Article: <strong id="cartproducts">0</strong></span>
+				<span>Total: <strong id="cartprice">0.00 CHF</strong></span>
 			</div>
 			<!-- End Cart -->
 
