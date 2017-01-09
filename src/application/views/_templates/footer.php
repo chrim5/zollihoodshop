@@ -178,9 +178,10 @@
 				<span>|</span>
 				<a href="#">Contact</a>
 				<span>|</span>
-                <a href="index.php?lang=en"><img src="/css/images/en.png" /></a>
+                <form method="post" action="application/views/_templates/lang.php">
+                <a href="application/views/_templates/lang.php?lang=en"><img src="/css/images/en.png" /></a>
 				<span>|</span>
-                <a href="index.php?lang=de"><img src="/css/images/de.png" /></a>
+                <a href="application/views/_templates/lang.php?lang=de"><img src="/css/images/de.png" /></a>
 			</p>
 			<p class="right">
 				&copy; 2016 MMs Book Store 
