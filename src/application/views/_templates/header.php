@@ -29,9 +29,9 @@
 
 			<!-- Cart -->
 			<div id="cart">
-				<a href="/cart" class="cart-link">Shopping cart</a>
+				<a href="/cart" class="cart-link"><?php echo $lang['SHOPPING_CART']; ?></a>
 				<div class="cl">&nbsp;</div>
-				<span>Article: <strong id="cartproducts">0</strong></span>
+				<span><?php echo $lang['SHOPPING_CART_ARTICLE']; ?>: <strong id="cartproducts">0</strong></span>
 				<span>Total: <strong id="cartprice">0.00 CHF</strong></span>
 			</div>
 			<!-- End Cart -->
@@ -40,18 +40,18 @@
 			<div id="navigation">
 				<ul>
 				<?php
-$menuitems = ["home" => $lang['MENU_HOME'],
-    "product" => $lang['MENU_PRODUCTS'],
-    "account" => $lang['MENU_ACCOUNT'], 
-    "contact" => $lang['MENU_CONTACT_US']];
+                    $menuitems = ["home" => $lang['MENU_HOME'],
+                    "product" => $lang['MENU_PRODUCTS'],
+                    "account" => $lang['MENU_ACCOUNT'],
+                    "contact" => $lang['MENU_CONTACT_US']];
 
-            foreach ($menuitems as $key => $value) {
-                $menuitem = strtolower($key);
-                if ($value === $sitename)
-                    echo "<li><a href=\"/$menuitem\" class=\"active\">$value</a></li>";
-                else
-                    echo "<li><a href=\"/$menuitem\">$value</a></li>";
-            }
+                            foreach ($menuitems as $key => $value) {
+                                $menuitem = strtolower($key);
+                                if ($value === $sitename)
+                                    echo "<li><a href=\"/$menuitem\" class=\"active\">$value</a></li>";
+                                else
+                                    echo "<li><a href=\"/$menuitem\">$value</a></li>";
+                            }
 				?>
 				</ul>
 			</div>

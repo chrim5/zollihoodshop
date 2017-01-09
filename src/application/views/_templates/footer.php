@@ -10,16 +10,16 @@
                         <?php
                             if (isset($_SESSION['username'])) {
                                 echo "Herzlich Willkommen ".$_SESSION['username'];
-                                echo '<a href="/user/logout">logout</a>';
+                                echo '<br /> <a href="/user/logout">'. $lang['LOGIN_LOGOUT'] .'</a>';
                             } else {
                         ?>
                             <form action="/user/login" method="post">
-                                <label>Username or E-Mail</label><br/>
+                                <label><?php echo $lang['LOGIN_USER']; ?></label><br/>
                                 <input type="text" name="username" class="field" /><br />
-                                <label>Password</label><br/>
+                                <label><?php echo $lang['LOGIN_PASS']; ?></label><br/>
                                 <input type="password" name="password" class="field" />
                         <?php
-                                echo '<a href="/user/register">register</a>';
+                                echo '<br /> <a href="/user/register">'. $lang['LOGIN_REGISTER'] .'</a>';
                             }
                         ?>
 					</div>
@@ -27,14 +27,14 @@
 
 				<!-- Search -->
 				<div class="box search">
-					<h2>Search by <span></span></h2>
+					<h2><?php echo $lang['SEARCH_TITLE']; ?><span></span></h2>
 					<div class="box-content">
 						<form action="/product/search" method="post">
 
-							<label>Keyword</label>
+							<label><?php echo $lang['SEARCH_KEYWORD']; ?></label>
 							<input type="text" name="term" class="field" />
 
-							<label>Category</label>
+							<label><?php echo $lang['SEARCH_CAT']; ?></label>
 							<select class="field">
                             <?php
                                 require APP . 'models/category.class.php';
@@ -46,17 +46,17 @@
 						</select>
 
 							<div class="inline-field">
-								<label>Price</label>
+								<label><?php echo $lang['SEARCH_PRICE']; ?></label>
 								<select class="field small-field">
 								<option value="">$10</option>
 							</select>
-								<label>to:</label>
+								<label><?php echo $lang['SEARCH_PRICE_TO']; ?></label>
 								<select class="field small-field">
 								<option value="">$50</option>
 							</select>
 							</div>
 
-							<input type="submit" class="search-submit" value="Search" />
+							<input type="submit" class="search-submit" value=<?php echo $lang['SEARCH']; ?> />
 						</form>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 
 				<!-- Categories -->
 				<div class="box categories">
-					<h2>Categories <span></span></h2>
+					<h2><?php echo $lang['CATEGORY']; ?><span></span></h2>
 					<div class="box-content">
 						<ul>
                             <?php
@@ -168,17 +168,17 @@
 		<!-- Footer -->
 		<div id="footer">
 			<p class="left">
-				<a href="#">Home</a>
-				<span>|</span>
-				<a href="#">Support</a>
-				<span>|</span>
-				<a href="#">My Account</a>
-				<span>|</span>
-				<a href="#">About us</a>
-				<span>|</span>
-				<a href="#">Contact</a>
-				<span>|</span>
-                <form method="post" action="application/views/_templates/lang.php">
+                <?php
+                $footerlinks = ["home" => $lang['FOOTER_HOME_HOME'],
+                    "account" => $lang['FOOTER_ACCOUNT'],
+                    "contact" => $lang['FOOTER_CONTACT_US']];
+
+                foreach ($menuitems as $key => $value) {
+                    $menuitem = strtolower($key);
+                    echo "<a href=\"/$menuitem\">$value</a>";
+                    echo '<span>|</span>';
+                }
+                ?>
                 <a href="application/views/_templates/lang.php?lang=en"><img src="/css/images/en.png" /></a>
 				<span>|</span>
                 <a href="application/views/_templates/lang.php?lang=de"><img src="/css/images/de.png" /></a>
