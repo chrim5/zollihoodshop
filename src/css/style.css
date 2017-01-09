@@ -145,6 +145,13 @@ h1#logo a {
 	padding: 0 15px;
 }
 
+.lang-link {
+	float: left;
+	height: 2em;
+	text-decoration: none;
+	padding: 1.5em 0em;
+}
+
 #navigation ul li a.active,
 #navigation ul li a:hover {
 	background: #fff;

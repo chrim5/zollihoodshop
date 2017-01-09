@@ -39,20 +39,22 @@
 			<!-- Navigation -->
 			<div id="navigation">
 				<ul>
-				<?php
-                    $menuitems = ["home" => $lang['MENU_HOME'],
-                    "product" => $lang['MENU_PRODUCTS'],
-                    "account" => $lang['MENU_ACCOUNT'],
-                    "contact" => $lang['MENU_CONTACT_US']];
+                    <li><a href="application/views/_templates/lang.php?lang=en"><img src="/css/images/en.png" class="lang-link" /></a></li>
+                    <li><a href="application/views/_templates/lang.php?lang=de"><img src="/css/images/de.png" class="lang-link" /></a></li>
+                    <?php
+                        $menuitems = ["home" => $lang['MENU_HOME'],
+                        "product" => $lang['MENU_PRODUCTS'],
+                        "account" => $lang['MENU_ACCOUNT'],
+                        "contact" => $lang['MENU_CONTACT_US']];
 
-                            foreach ($menuitems as $key => $value) {
-                                $menuitem = strtolower($key);
-                                if ($value === $sitename)
-                                    echo "<li><a href=\"/$menuitem\" class=\"active\">$value</a></li>";
-                                else
-                                    echo "<li><a href=\"/$menuitem\">$value</a></li>";
-                            }
-				?>
+                                foreach ($menuitems as $key => $value) {
+                                    $menuitem = strtolower($key);
+                                    if ($value === $sitename)
+                                        echo "<li><a href=\"/$menuitem\" class=\"active\">$value</a></li>";
+                                    else
+                                        echo "<li><a href=\"/$menuitem\">$value</a></li>";
+                                }
+                    ?>
 				</ul>
 			</div>
 			<!-- End Navigation -->
