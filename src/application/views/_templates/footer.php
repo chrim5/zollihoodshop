@@ -171,7 +171,7 @@
 		<div id="footer">
 			<p class="left">
                 <?php
-                $footerlinks = ["home" => $lang['FOOTER_HOME_HOME'],
+                $footerlinks = ["home" => $lang['FOOTER_HOME'],
                     "account" => $lang['FOOTER_ACCOUNT'],
                     "contact" => $lang['FOOTER_CONTACT_US']];
 

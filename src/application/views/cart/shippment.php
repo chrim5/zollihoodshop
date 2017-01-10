@@ -21,4 +21,4 @@ Your order details:
     <?php endforeach;?>
     </tbody>
 </table>
-<a href="cart/order" class="button">Order</a>
+<a href="/cart/order" class="button">Order</a>
