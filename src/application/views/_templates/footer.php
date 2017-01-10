@@ -15,9 +15,11 @@
                         ?>
                             <form action="/user/login" method="post">
                                 <label><?php echo $lang['LOGIN_USER']; ?></label><br/>
-                                <input type="text" name="username" class="field" /><br />
+                                <input type="email" name="username" class="field" required /><br />
                                 <label><?php echo $lang['LOGIN_PASS']; ?></label><br/>
-                                <input type="password" name="password" class="field" />
+                                <input type="password" name="password" class="field" /><br />
+                                <input type="submit" value="Login" class="search-submit" />
+                            </form>
                         <?php
                                 echo '<br /> <a href="/user/register">'. $lang['LOGIN_REGISTER'] .'</a>';
                             }

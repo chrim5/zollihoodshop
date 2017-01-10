@@ -17,7 +17,7 @@ $lang['FOOTER_HOME'] = 'Index';
 $lang['FOOTER_ACCOUNT'] = 'Account';
 $lang['FOOTER_CONTACT_US'] = 'Contact';
 // Login box
-$lang['LOGIN_USER'] = 'Username oder Email';
+$lang['LOGIN_USER'] = 'Email';
 $lang['LOGIN_PASS'] = 'Passwort';
 $lang['LOGIN_REGISTER'] = 'Registrieren';
 $lang['LOGIN_LOGOUT'] = 'Ausloggen';
