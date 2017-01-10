@@ -10,7 +10,7 @@
                         <?php
                             if (isset($_SESSION['username'])) {
                                 echo "Herzlich Willkommen ".$_SESSION['username'];
-                                echo '<br /> <a href="/user/logout">'. $lang['LOGIN_LOGOUT'] .'</a>';
+                                echo '<br /> <a href="/user/logout" class="button">'. $lang['LOGIN_LOGOUT'] .'</a>';
                             } else {
                         ?>
                             <form action="/user/login" method="post">
@@ -21,7 +21,7 @@
                                 <input type="submit" value="Login" class="search-submit" />
                             </form>
                         <?php
-                                echo '<br /> <a href="/user/register">'. $lang['LOGIN_REGISTER'] .'</a>';
+                                echo '<a href="/user/register" class="button">'. $lang['LOGIN_REGISTER'] .'</a>';
                             }
                         ?>
 					</div>

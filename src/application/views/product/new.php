@@ -16,5 +16,5 @@ foreach($categories as $c) { ?>
 <?php
 } ?>
   </select>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" class="search-submit">
 </form>

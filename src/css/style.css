@@ -182,6 +182,23 @@ a.cart-link:hover {
 	text-decoration: underline;
 }
 
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	width: 70px;
+	background: #8b0000;
+	border: 0;
+	color: #fff;
+	height: 27px;
+	display: block;
+	line-height: 26px;
+	cursor: pointer;
+	margin: 12px 0 10px 0;
+	text-align: center;
+}
+
 #sidebar {
 	float: left;
 	width: 226px;

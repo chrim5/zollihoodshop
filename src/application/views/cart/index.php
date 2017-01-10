@@ -21,4 +21,4 @@ foreach ($cart as $rows) :?>
 <?php endforeach;?>
 </tbody>
 </table>
-<a href="cart/clear">clear</a>
+<a href="cart/clear" class="button">Clear</a>
