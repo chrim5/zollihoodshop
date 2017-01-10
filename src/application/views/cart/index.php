@@ -22,3 +22,7 @@ foreach ($cart as $rows) :?>
 </tbody>
 </table>
 <a href="cart/clear" class="button">Clear</a>
+<?php
+    if (!empty($cart))
+        echo '<a href="cart/shippment" class="button">Order</a>';
+?>

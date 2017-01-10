@@ -21,7 +21,7 @@
                                 <input type="submit" value="Login" class="search-submit" />
                             </form>
                         <?php
-                                echo '<a href="/user/register" class="button">'. $lang['LOGIN_REGISTER'] .'</a>';
+                                echo '<a href="/user/register">'. $lang['LOGIN_REGISTER'] .'</a>';
                             }
                         ?>
 					</div>

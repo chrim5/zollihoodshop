@@ -50,4 +50,21 @@ class Cart
 
         echo json_encode($data);
     }
+
+    public function order()
+    {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+        require APP . 'models/product.php';
+        require APP . 'models/cart.php';
+
+        $to      = $_SESSION['username'];
+        $subject = 'Your order confirmation on mmbooks.press';
+        $message = 'Test';
+        $headers = 'From: webmaster@mmbooks.press' . "\r\n" .
+            'Reply-To: webmaster@mmbooks.press' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
+    }
 }
