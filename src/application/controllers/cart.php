@@ -53,10 +53,11 @@ class Cart
 
     public function order()
     {
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: /home');
 
         require APP . 'models/product.php';
         require APP . 'models/cart.php';
+        require APP . 'views/cart/shippment.php';
 
         $to      = $_SESSION['username'];
         $subject = 'Your order confirmation on mmbooks.press';
