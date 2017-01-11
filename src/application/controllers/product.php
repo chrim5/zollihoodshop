@@ -71,10 +71,11 @@ class Product
 
         $Product = new ProductModel();
 
-        var_dump($_FILES);
+        //var_dump($_FILES);
         $binary = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
         $Product->uploadBinary($productid, $binary);
+        header('Location: /product' );
     }
 
     public function create()
@@ -91,6 +92,6 @@ class Product
     
         $Product = new ProductModel();
         $Product->createNew($u);
-        header('Location: /' );
+        header('Location: /product' );
     }
 }

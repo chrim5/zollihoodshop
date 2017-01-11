@@ -95,8 +95,6 @@
 					<ul>
                         <?php
                             require_once APP . 'models/product.php';
-                            //$Product = new ProductModel();
-                            //$p = $Product->getProducts();
                             $p = ProductObj::getProducts();
                             $numItems = count($p);
                             $i = 0;
@@ -113,71 +111,6 @@
                                 }
                             }
                             ?>
-                        <!--
-						<li>
-							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/bauernleben_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/unsere_wunderbaren_jahre_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/mind_control_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/im_schatten_unserer_wuensche_small.jpg" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="/css/images/schlafende_hunde_inspector_rebus_19_small.jpg" alt="" /></a>
-						</li>
-						<li class="last">
-							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
-						</li>
-                        -->
 					</ul>
 				</div>
 				<div class="more-nav">
