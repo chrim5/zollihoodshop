@@ -71,7 +71,7 @@
 						<ul>
                             <?php
                                 require APP . 'views/_templates/navigation.php';
-								$categories = Category::getCategories();				   
+								$categories = Category::getCategories();
                                 Navigation::GenerateCategoryList($categories);
                             ?>
 						</ul>
@@ -93,6 +93,27 @@
 			<div class="more-products">
 				<div class="more-products-holder">
 					<ul>
+                        <?php
+                            require_once APP . 'models/product.php';
+                            //$Product = new ProductModel();
+                            //$p = $Product->getProducts();
+                            $p = ProductObj::getProducts();
+                            $numItems = count($p);
+                            $i = 0;
+                            foreach ($p as $rows) {
+                                if (++$i === $numItems) {
+                                    echo '<li class="last">';
+                                        echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" width="100" height="160"/></a>';
+                                    echo '</li>';
+                                } else {
+                                    echo '<li>';
+                                        echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" width="100" height="160"/></a>';
+                                    echo '</li>';
+                                    echo "\n";
+                                }
+                            }
+                            ?>
+                        <!--
 						<li>
 							<a href="#"><img src="/css/images/harry_potter_und_das_verwunschene_kind_teil_eins_und_zwei_small.jpg" alt="" /></a>
 						</li>
@@ -156,6 +177,7 @@
 						<li class="last">
 							<a href="#"><img src="/css/images/am_anderen_ende_der_nacht_die_china_trilogie_3_small.jpg" alt="" /></a>
 						</li>
+                        -->
 					</ul>
 				</div>
 				<div class="more-nav">
