@@ -2,18 +2,18 @@
     <div id="slider" class="box">
         <div id="slider-holder">
             <ul>
-                <li>
-                    <a href="#"><img src="css/images/Kluepfel_banner.jpg" alt="" /></a>
-                </li>
-                <li>
-                    <a href="#"><img src="css/images/Kluepfel_banner.jpg" alt="" /></a>
-                </li>
-                <li>
-                    <a href="#"><img src="css/images/Kluepfel_banner.jpg" alt="" /></a>
-                </li>
-                <li>
-                    <a href="#"><img src="css/images/Kluepfel_banner.jpg" alt="" /></a>
-                </li>
+                <?php
+                require_once APP . 'models/product.php';
+                $p = ProductObj::getProducts();
+                $hotprice = 15;
+                foreach ($p as $rows) {
+                    if ($rows->price != null && $rows->price < $hotprice) {
+                        echo '<li class="last">';
+                        echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" height="252"/></a>';
+                        echo '</li>';
+                    }
+                }
+                ?>
             </ul>
         </div>
         <div id="slider-nav">

@@ -342,6 +342,7 @@ a.bul {
 	height: 252px;
 	position: relative;
 	overflow: hidden;
+	background-image: url("images/hotprice.png");
 }
 
 #slider-holder .jcarousel-clip {
