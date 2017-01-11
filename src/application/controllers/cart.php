@@ -57,7 +57,7 @@ class Cart
         require APP . 'models/cart.php';
         require APP . 'views/_templates/header.php';
         require APP . 'views/_templates/footer.php';
-        
+
         $to      = $_SESSION['username'];
         $subject = 'Your order confirmation on mmbooks.press';
         $message = 'Test';
@@ -68,14 +68,14 @@ class Cart
         mail($to, $subject, $message, $headers);
     }
 
-    public function shippment()
+    public function shipment()
     {
         require APP . 'models/cart.php';
         $Product = new CartModel();
         $cart = $Product->getCartProducts();
 
         require APP . 'views/_templates/header.php';
-        require APP . 'views/cart/shippment.php';
+        require APP . 'views/cart/shipment.php';
         require APP . 'views/_templates/footer.php';
     }
 
