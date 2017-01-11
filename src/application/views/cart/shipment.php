@@ -23,9 +23,9 @@ Your order details:
 </table>
 Delivery choice:<br />
 <form id="order-form" action="/cart/order" method="post" onsubmit="return myFunction()">
-    <input type="radio" name="shipment" value="priority" required>Post Priority<br />
-    <input type="radio" name="shipment" value="express" required>Express (1 Day delivery)<br />
-    <input type="radio" name="shipment" value="dhl" required>DHL<br />
+    <input type="radio" name="shipment" value="Post Priority" required>Post Priority<br />
+    <input type="radio" name="shipment" value="Express (1 Day delivery)" required>Express (1 Day delivery)<br />
+    <input type="radio" name="shipment" value="DHL" required>DHL<br />
     <input type="submit" class="search-submit" value="Order">
 </form>
 <p id="order-confirm"></p>

@@ -54,13 +54,14 @@ class Cart
     public function order()
     {
         header('Location: /home');
-        require APP . 'models/cart.php';
         require APP . 'views/_templates/header.php';
         require APP . 'views/_templates/footer.php';
+        require APP . 'models/cart.php';
+        require APP . 'views/cart/index.php';
 
         $to      = $_SESSION['username'];
         $subject = 'Your order confirmation on mmbooks.press';
-        $message = 'Test';
+        $message = 'Your delivery option: ' . $_POST['shipment'];
         $headers = 'To:' . $_SESSION['username'] . "\r\n" .
             'From: webmaster@mmbooks.press' . "\r\n" .
             'Reply-To: webmaster@mmbooks.press' . "\r\n" .
