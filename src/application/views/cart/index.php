@@ -24,5 +24,5 @@ foreach ($cart as $rows) :?>
 <a href="cart/clear" class="button">Clear</a>
 <?php
     if (!empty($cart))
-        echo '<a href="cart/shippment" class="button">Order</a>';
+        echo '<a href="cart/shipment" class="button">Order</a>';
 ?>

@@ -1,4 +1,4 @@
-Your order details:
+<b>Your order details:</b>
 <table>
     <thead align="left" style="display: table-header-group">
     <tr>
@@ -21,7 +21,9 @@ Your order details:
     <?php endforeach;?>
     </tbody>
 </table>
-Delivery choice:<br />
+<br />
+<b>Delivery choice:</b>
+<br />
 <form id="order-form" action="/cart/order" method="post" onsubmit="return myFunction()">
     <input type="radio" name="shipment" value="Post Priority" required>Post Priority<br />
     <input type="radio" name="shipment" value="Express (1 Day delivery)" required>Express (1 Day delivery)<br />
