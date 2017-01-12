@@ -16,12 +16,14 @@
                 ?>
             </ul>
         </div>
+        <!-- FIXME generate slider-nav dynamically -->
         <div id="slider-nav">
             <a href="#" class="active">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
         </div>
+        ?>
     </div>
     <!-- End Content Slider -->
 

@@ -57,14 +57,41 @@ class Cart
         require APP . 'views/_templates/header.php';
         require APP . 'views/_templates/footer.php';
         require APP . 'models/cart.php';
-        require APP . 'views/cart/index.php';
+        //require APP . 'views/cart/index.php';
+        $Product = new CartModel();
+        $cart = $Product->getCartProducts();
+        $priceTotal = $Product->getCartPriceTotal();
 
-        $to      = $_SESSION['username'];
+        $to      = strip_tags($_SESSION['username']);
         $subject = 'Your order confirmation on mmbooks.press';
-        $message = 'Your delivery option: ' . $_POST['shipment'];
+
+        $message = '<html><body>';
+        $message .= '<table>
+                        <thead align="left" style="display: table-header-group">
+                          <tr>
+                             <th>Num </th>
+                             <th>Name</th>
+                             <th>Price</th>
+                             <th>Category</th>
+                          </tr>
+                          </thead><tbody>';
+        foreach ($cart as $rows){
+        $message .= '<tr class="item_row">
+                         <td>'. $rows->id . '</td>
+                         <td>'. $rows->name . '</td>
+                         <td>'. $rows->price . '</td>
+                         <td>'. $rows->category . '</td>
+                     </tr>';
+        }
+        $message .= '</tbody></table>';
+        $message .= '<h2>TOTAL: </h2>' . $priceTotal;
+        $message .= '<h2>Your delivery option: </h2>' . $_POST['shipment'];
+        $message .= '</body></html>';
         $headers = 'To:' . $_SESSION['username'] . "\r\n" .
             'From: webmaster@mmbooks.press' . "\r\n" .
             'Reply-To: webmaster@mmbooks.press' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n" .
+            'Content-Type: text/html; charset=UTF-8' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
         mail($to, $subject, $message, $headers);
     }
