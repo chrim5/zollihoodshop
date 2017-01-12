@@ -9,7 +9,7 @@
 					<div class="login-content">
                         <?php
                             if (isset($_SESSION['username'])) {
-                                echo "Herzlich Willkommen ".$_SESSION['username'];
+                                echo "Herzlich Willkommen ".$_SESSION['firstname'];
                                 echo '<br /> <a href="/user/logout" class="button">'. $lang['LOGIN_LOGOUT'] .'</a>';
                             } else {
                         ?>

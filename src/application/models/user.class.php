@@ -10,6 +10,9 @@ class UserObj
         return $this->email;
     }
 
+    public function getFirstname(){
+        return $this->firstname;
+    }
 
     public function getPassword(){
         return $this->password;

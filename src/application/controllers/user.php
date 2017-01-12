@@ -47,6 +47,7 @@ class User
         if (password_verify($_POST["password"],$user->getPassword()))
         {
             $_SESSION['username'] = $_POST["username"];
+            $_SESSION['firstname'] = $user->getFirstname();
             header('Location: /' );
             die();
         }
