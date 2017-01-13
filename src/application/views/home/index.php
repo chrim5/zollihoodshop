@@ -36,7 +36,7 @@
                 <div class="product-info">
                     <h3>LOREM IPSUM</h3>
                     <div class="product-desc">
-                        <h4>WOMEN’S</h4>
+                        <h4>New/h4>
                         <p>Lorem ipsum dolor sit<br />amet</p>
                         <strong class="price">$58.99</strong>
                     </div>
@@ -47,7 +47,7 @@
                 <div class="product-info">
                     <h3>LOREM IPSUM</h3>
                     <div class="product-desc">
-                        <h4>WOMEN’S</h4>
+                        <h4>New</h4>
                         <p>Lorem ipsum dolor sit<br />amet</p>
                         <strong class="price">$58.99</strong>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="product-info">
                     <h3>LOREM IPSUM</h3>
                     <div class="product-desc">
-                        <h4>WOMEN’S</h4>
+                        <h4>New</h4>
                         <p>Lorem ipsum dolor sit<br />amet</p>
                         <strong class="price">$58.99</strong>
                     </div>
