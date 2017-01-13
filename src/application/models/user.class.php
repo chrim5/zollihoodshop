@@ -6,16 +6,29 @@ class UserObj
     public $id,$email,$firstname,$lastname,$admin;
     private $password;
 
-    public function __toString() {
+    public function __toString()
+    {
         return $this->email;
     }
 
-    public function getFirstname(){
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 
-    public function getPassword(){
+    public function getPassword()
+    {
         return $this->password;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getLastname()
+    {
+        return $this->lastname;
     }
 
     public function savePassword($stringPassword){

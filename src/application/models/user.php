@@ -44,9 +44,9 @@ class UserModel extends Model
         $stmt = $this->db->prepare('UPDATE users
             set email=? , firstname=? , lastname=? , admin=? , password=?
             WHERE id=?');
-        $stmt->execute();
+        //$stmt->execute();
         $stmt->bind_param('sssisi', $user->email, $user->firstname, 
-            $user->lastname, $user->admin, $user->password, $user->id);
+            $user->lastname, $user->admin, $user->getPassword(), $user->id);
         $stmt->execute();
     }
 }

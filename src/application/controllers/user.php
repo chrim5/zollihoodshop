@@ -36,6 +36,22 @@ class User
         header('Location: /' );
     }
 
+    public function update()
+    {
+        require APP . 'models/user.php';
+        require_once APP . 'models/user.class.php';
+
+        $u = new UserObj();
+        $u->email = $_POST["email"];
+        $u->firstname = $_POST["firstname"];
+        $u->lastname = $_POST["lastname"];
+        $u->savePassword($_POST["password"]);
+
+        $User = new UserModel();
+        $User->save($u);
+        header('Location: /' );
+    }
+
     public function login()
     {
         session_start();
@@ -48,6 +64,7 @@ class User
         {
             $_SESSION['username'] = $_POST["username"];
             $_SESSION['firstname'] = $user->getFirstname();
+            $_SESSION['lastname'] = $user->getLastname();
             header('Location: /' );
             die();
         }
