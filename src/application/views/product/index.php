@@ -12,7 +12,7 @@ foreach ($products as $rows) :?>
             <div class="rightiteminfo">
                 <h2><?php echo $rows->name; ?></h2>
                 <h3><?php echo $rows->price; ?>.- CHF</h3>
-                <a href="cart/add/<?php echo $rows->id; ?>">add to cart</a>
+                <a href="/cart/add/<?php echo $rows->id; ?>">add to cart</a>
             </div>
         </div>
     </li>
