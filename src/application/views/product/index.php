@@ -1,4 +1,4 @@
-<div class="products">
+<div class="products" id="productslist">
 <ul>
 <?php 
 $total = 0;

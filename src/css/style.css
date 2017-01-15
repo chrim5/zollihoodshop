@@ -403,11 +403,19 @@ a.bul {
 	padding: 1px;
 	border: solid 1px #dedede;
 	float: left;
+	width: 231px;
+	margin-right: 9px;
+	height: 342px;
+	overflow: hidden;
+}
+
+#productslist ul li {
 	width: 700px;
 	margin-right: 9px;
 	height: 250px;
-	overflow: hidden;
 }
+
+
 
 .products ul li.last {
 	margin-right: 0;
