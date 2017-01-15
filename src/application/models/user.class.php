@@ -31,6 +31,11 @@ class UserObj
         return $this->lastname;
     }
 
+    public function isAdmin()
+    {
+        return $this->admin;
+    }
+
     public function savePassword($stringPassword){
         $this->password = password_hash($stringPassword, PASSWORD_DEFAULT);
     }

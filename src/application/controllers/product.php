@@ -40,6 +40,7 @@ class Product
 
     public function additem()
     {
+        Application::needsAdmin();
         require APP . 'models/product.php';
         $Product = new ProductModel();
         $categories = $Product->getCategories();
@@ -50,6 +51,7 @@ class Product
 
     public function addimage($productid)
     {
+        Application::needsAdmin();
         require APP . 'views/_templates/header.php';
         require APP . 'views/product/addimage.php';
         require APP . 'views/_templates/footer.php';
@@ -67,6 +69,7 @@ class Product
 
     public function upload($productid)
     {
+        Application::needsAdmin();
         require APP . 'models/product.php';
 
         $Product = new ProductModel();
@@ -80,6 +83,7 @@ class Product
 
     public function create()
     {
+        Application::needsAdmin();
         require APP . 'models/product.php';
         require_once APP . 'models/product.class.php';
         

@@ -13,6 +13,18 @@ class User
         require APP . 'views/_templates/footer.php';
     }
 
+    public function testsession()
+    {
+        Application::needsAdmin();
+        session_start();
+        var_dump($_SESSION);
+
+        if ($_SESSION['admin'])
+        {
+            echo "he is admin";
+        }
+    }
+
     public function register()
     {
         require APP . 'views/_templates/header.php';
@@ -65,6 +77,7 @@ class User
             $_SESSION['username'] = $_POST["username"];
             $_SESSION['firstname'] = $user->getFirstname();
             $_SESSION['lastname'] = $user->getLastname();
+            $_SESSION['admin'] = $user->isAdmin();
             header('Location: /' );
             die();
         }
@@ -72,7 +85,6 @@ class User
         {
             echo "WRONG PASSWORD";
         }
-
     }
 
     public function logout()

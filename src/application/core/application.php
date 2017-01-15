@@ -52,4 +52,15 @@ class Application
         unset($url[0], $url[1]);
         $this->url_params = array_values($url);
     }
+
+    public static function needsAdmin()
+    {
+        session_start();
+
+        if (!$_SESSION['admin'])
+        {
+            echo "you are not admin.";
+            die();
+        }
+    }
 }
