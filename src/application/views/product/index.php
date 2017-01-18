@@ -7,7 +7,10 @@ foreach ($products as $rows) :?>
         <div class="itemwrapper">
             <div class="leftiteminfo">
                 <img src="/product/image/<?php echo $rows->id; ?>" width="130">
-                <a href="/product/addimage/<?php echo $rows->id; ?>">change image</a>
+                <?php
+                    if ($_SESSION['admin'])
+                        echo '<a href="/product/addimage/' . $rows->id . '">change image</a>';
+                ?>
             </div>
             <div class="rightiteminfo">
                 <h2><?php echo $rows->name; ?></h2>
@@ -18,5 +21,8 @@ foreach ($products as $rows) :?>
     </li>
 <?php endforeach;?>
 </ul>
-<a href="/product/additem">new item</a>
+<?php
+    if ($_SESSION['admin'])
+        echo '<a href="/product/additem">new item</a>';
+?>
 </div>
