@@ -107,6 +107,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 INSERT INTO myapp.users (email, username, firstname, lastname, admin, password) VALUES ('user@user.com', 'hansmuster1','Hans', 'Muster', 0, '$2y$10$S.81nK4wLtT.4v4KteJcFOatWoPMS2.W513onOy0sn0905wBzAhUm');
 INSERT INTO myapp.users (email, username, firstname, lastname, admin, password) VALUES ('admin@admin.com', 'adminhans', 'AdminHans', 'AdminMuster', 1, '$2y$10$6zW2HiwBsZIDk/UqDlBU8.ojt91Ovh4S///7aVv3XsqSyFtIcIz.m');
+INSERT INTO myapp.users (email, username, firstname, lastname, admin, password) VALUES ('admin@admin.com', 'admin', 'Admin', 'Admin', 1, '$2y$10$SWy0KFtH/BWQ4D47D8.EsuDT270tCjTawniPpkDXCnsFpBo3Z2yYG');
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
