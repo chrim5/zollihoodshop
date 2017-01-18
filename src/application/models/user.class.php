@@ -3,7 +3,7 @@ require_once("application/db/db.php");
 
 class UserObj
 {
-    public $id,$email,$firstname,$lastname,$admin;
+    public $id,$email,$username,$firstname,$lastname,$admin;
     private $password;
 
     public function __toString()
@@ -24,6 +24,16 @@ class UserObj
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
     public function getLastname()

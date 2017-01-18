@@ -39,6 +39,7 @@ class User
 
         $u = new UserObj();
         $u->email = $_POST["email"];
+        $u->username = $_POST["username"];
         $u->firstname = $_POST["firstname"];
         $u->lastname = $_POST["lastname"];
         $u->savePassword($_POST["password"]);
@@ -55,6 +56,7 @@ class User
 
         $u = new UserObj();
         $u->email = $_POST["email"];
+        $u->username = $_POST["username"];
         $u->firstname = $_POST["firstname"];
         $u->lastname = $_POST["lastname"];
         $u->savePassword($_POST["password"]);
@@ -71,10 +73,11 @@ class User
         require APP . 'models/user.php';
         
         $User = new UserModel();
-        $user = $User->getUser($_POST["username"]);
-        if (password_verify($_POST["password"],$user->getPassword()))
+        $user = $User->getUser($_POST['username']);
+        if (password_verify($_POST['password'],$user->getPassword()))
         {
-            $_SESSION['username'] = $_POST["username"];
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['email'] = $user->getEmail();
             $_SESSION['firstname'] = $user->getFirstname();
             $_SESSION['lastname'] = $user->getLastname();
             $_SESSION['admin'] = $user->isAdmin();

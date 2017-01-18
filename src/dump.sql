@@ -90,6 +90,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `username` varchar(200) CHARACTER SET latin1 NOT NULL,
   `firstname` varchar(100) CHARACTER SET latin1 NOT NULL,
   `lastname` varchar(100) CHARACTER SET latin1 NOT NULL,
   `admin` int(11) NOT NULL DEFAULT '0',
@@ -104,8 +105,8 @@ CREATE TABLE `users` (
 --
 
 LOCK TABLES `users` WRITE;
-INSERT INTO myapp.users (email, firstname, lastname, admin, password) VALUES ('user@user.com', 'Hans', 'Muster', 0, '$2y$10$S.81nK4wLtT.4v4KteJcFOatWoPMS2.W513onOy0sn0905wBzAhUm');
-INSERT INTO myapp.users (email, firstname, lastname, admin, password) VALUES ('admin@admin.com', 'AdminHans', 'AdminMuster', 1, '$2y$10$6zW2HiwBsZIDk/UqDlBU8.ojt91Ovh4S///7aVv3XsqSyFtIcIz.m');
+INSERT INTO myapp.users (email, username, firstname, lastname, admin, password) VALUES ('user@user.com', 'hansmuster1','Hans', 'Muster', 0, '$2y$10$S.81nK4wLtT.4v4KteJcFOatWoPMS2.W513onOy0sn0905wBzAhUm');
+INSERT INTO myapp.users (email, username, firstname, lastname, admin, password) VALUES ('admin@admin.com', 'adminhans', 'AdminHans', 'AdminMuster', 1, '$2y$10$6zW2HiwBsZIDk/UqDlBU8.ojt91Ovh4S///7aVv3XsqSyFtIcIz.m');
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

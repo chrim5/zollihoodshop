@@ -14,11 +14,11 @@ class UserModel extends Model
         return $users;
     }
     
-    public function getUser($searchemail){
+    public function getUser($searchusername){
         $users = array(); 
 
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->bind_param('s', $searchemail);
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->bind_param('s', $searchusername);
         $stmt->execute();
 
         $result = $stmt->get_result();
@@ -33,19 +33,19 @@ class UserModel extends Model
 
     public function createNew($user){
         $stmt = $this->db->prepare('INSERT INTO
-            users(email,firstname,lastname,admin,password) 
-            VALUES (?, ?, ?, 0, ?)');
-        $stmt->bind_param('ssss', $user->email, $user->firstname, 
+            users(email,username,firstname,lastname,admin,password) 
+            VALUES (?, ?, ?, ?, 0, ?)');
+        $stmt->bind_param('sssss', $user->email, $user->username, $user->firstname,
             $user->lastname, $user->getPassword() );
         $stmt->execute();
     }
 
     public function save($user){
         $stmt = $this->db->prepare('UPDATE users
-            set email=? , firstname=? , lastname=? , admin=? , password=?
+            set email=? , username=?, firstname=? , lastname=? , admin=? , password=?
             WHERE id=?');
         //$stmt->execute();
-        $stmt->bind_param('sssisi', $user->email, $user->firstname, 
+        $stmt->bind_param('ssssisi', $user->email, $user->username, $user->firstname,
             $user->lastname, $user->admin, $user->getPassword(), $user->id);
         $stmt->execute();
     }
