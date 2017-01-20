@@ -596,7 +596,11 @@ h3.ico4 {
     overflow: hidden; /* if you don't want #second to wrap below #first */
 }
 
-
+@media screen and (min-width: 0px) and (max-width: 400px) {
+      #sidebar { display: none; }  /* show it on small screens */
+      #content { float: left; }
+      .shell {width: 100%}
+  }
 
 
 
