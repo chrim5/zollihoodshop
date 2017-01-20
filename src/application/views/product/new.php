@@ -1,14 +1,14 @@
 <form action="/product/create" method="post">
   Name:<br>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" required><br>
   Details:<br>
-  <input type="text" name="details"><br>
+  <input type="text" name="details" required><br>
   Price:<br>
-  <input type="text" name="price"><br>
+  <input type="number" name="price" required><br>
   Reduced Price:<br>
-  <input type="text" name="reducedprice"><br>
+  <input type="number" name="reducedprice" required><br>
   Category:<br>
-  <select name="category">
+  <select name="category" required>
     <option selected="1">Choose one</option>
     <?php
 foreach($categories as $c) { ?>
