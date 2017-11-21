@@ -1,8 +1,6 @@
 <?php
-class Product 
-{
-    public function index()
-    {
+class Product {
+    public function index() {
         require APP . 'models/product.php';
         
         $Product = new ProductModel();
@@ -13,8 +11,7 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
-    public function category($categoryid)
-    {
+    public function category($categoryid) {
         require APP . 'models/product.php';
         
         $product = new productmodel();
@@ -25,8 +22,7 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
-    public function search()
-    {
+    public function search() {
         require APP . 'models/product.php';
         
         $product = new productmodel();
@@ -38,8 +34,7 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
-    public function additem()
-    {
+    public function additem() {
         Application::needsAdmin();
         require APP . 'models/product.php';
         $Product = new ProductModel();
@@ -49,16 +44,14 @@ class Product
         require APP . 'views/_templates/footer.php';
     }
 
-    public function addimage($productid)
-    {
+    public function addimage($productid) {
         Application::needsAdmin();
         require APP . 'views/_templates/header.php';
         require APP . 'views/product/addimage.php';
         require APP . 'views/_templates/footer.php';
     }
 
-    public function image($productid)
-    {
+    public function image($productid) {
         require APP . 'models/product.php';
 
         $Product = new ProductModel();
@@ -67,8 +60,7 @@ class Product
         echo $image;     
     }
 
-    public function upload($productid)
-    {
+    public function upload($productid) {
         Application::needsAdmin();
         require APP . 'models/product.php';
 
@@ -81,8 +73,7 @@ class Product
         header('Location: /product' );
     }
 
-    public function create()
-    {
+    public function create() {
         Application::needsAdmin();
         require APP . 'models/product.php';
         require_once APP . 'models/product.class.php';

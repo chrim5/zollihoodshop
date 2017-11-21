@@ -2,8 +2,7 @@
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
  */
-class Model
-{
+class Model {
     public $db = null;
 
     function __construct()

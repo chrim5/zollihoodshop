@@ -59,8 +59,7 @@ class ProductModel extends Model
         return $products;
     }
 
-    public function getProductById($product_id)
-    {
+    public function getProductById($product_id){
         $products = array(); 
 
         $stmt = $this->db->prepare("SELECT * FROM products WHERE id = ?");
@@ -86,8 +85,7 @@ class ProductModel extends Model
         $stmt->execute();
     }
 
-    public function getBinary($productid)
-    {
+    public function getBinary($productid){
         $stmt = $this->db->prepare("SELECT imageblob FROM products WHERE id=?"); 
         $stmt->bind_param("i", $productid);
 
@@ -99,8 +97,7 @@ class ProductModel extends Model
         return $image;
     }
 
-    public function uploadBinary ($productid, $binary)
-    {
+    public function uploadBinary ($productid, $binary){
         $stmt = $this->db->prepare('UPDATE products SET
             imageblob = ?
             WHERE id = ?');

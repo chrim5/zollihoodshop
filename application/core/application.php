@@ -5,8 +5,10 @@ class Application
     private $url_action = null;
     private $url_params = array();
 
-    public function __construct()
-    {
+    /*
+     * URL handling/routing of controllers
+     */
+    public function __construct(){
         $this->getUrlWithoutModRewrite();
         if (!$this->url_controller) {
             require APP . 'controllers/home.php';
@@ -38,8 +40,7 @@ class Application
         }
     }
 
-    private function getUrlWithoutModRewrite()
-    {
+    private function getUrlWithoutModRewrite(){
         $url = explode('/', $_SERVER['REQUEST_URI']);
         $url = array_diff($url, array('', 'index.php'));
         $url = array_values($url);
@@ -53,8 +54,10 @@ class Application
         $this->url_params = array_values($url);
     }
 
-    public static function needsAdmin()
-    {
+    /*
+     * Restrict access to pages
+     */
+    public static function needsAdmin(){
         session_start();
 
         if (!$_SESSION['admin'])
