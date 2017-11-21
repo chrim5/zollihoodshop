@@ -15,7 +15,6 @@ class ProductModel extends Model
     }
 
     public function getCategories(){
-        $products = array();
         $res = $this->db->query("SELECT * FROM categories");
         if (!$res) return null;
 

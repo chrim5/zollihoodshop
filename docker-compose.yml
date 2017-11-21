@@ -1,17 +1,38 @@
-web:
-  build: .
-  links:
-    - mysql
-  ports:
-    - "8080:80"
-  volumes:
-      - ./src/:/var/www/html
-mysql:
-  image: mysql
-  ports:
-    - "3306:3306"
-  environment:
-    MYSQL_ROOT_PASSWORD: 123456
-    MYSQL_USER: dev
-    MYSQL_PASSWORD: 123456
-    MYSQL_DATABASE: myapp
+version: '2'
+
+services:
+    mysql:
+        build: ./docker/mysql
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: zollihoodshop
+            MYSQL_USER: app
+            MYSQL_PASSWORD: app
+
+    php:
+        build: ./docker/php-fpm
+        ports:
+            - 9000:9000
+        environment:
+            DB_HOST: mysql
+            DB_USER: app
+            DB_PASSWORD: app
+            DB_NAME: zollihoodshop
+        volumes:
+            - .:/zollihoodshop
+        links:
+            - mysql
+
+    nginx:
+        image: nginx:latest
+        depends_on:
+            - php
+        ports:
+            - 80:80
+        volumes:
+            - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+            - .:/zollihoodshop
+        links:
+            - php

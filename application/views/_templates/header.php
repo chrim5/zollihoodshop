@@ -25,11 +25,11 @@
 
 		<!-- Header -->
 		<div id="header">
-            <h1 id="logo"><a href="/home"></a></h1>
+            <h1 id="logo"><a href="/index.php"></a></h1>
 
 			<!-- Cart -->
 			<div id="cart">
-				<a href="/cart" class="cart-link"><?php echo $lang['SHOPPING_CART']; ?></a>
+				<a href="/index.php" class="cart-link"><?php echo $lang['SHOPPING_CART']; ?></a>
 				<div class="cl">&nbsp;</div>
 				<span><?php echo $lang['SHOPPING_CART_ARTICLE']; ?>: <strong id="cartproducts">0</strong></span>
 				<span>Total: <strong id="cartprice">0.00 CHF</strong></span>

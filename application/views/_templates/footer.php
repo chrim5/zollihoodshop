@@ -98,16 +98,19 @@
                             $p = ProductObj::getProducts();
                             $numItems = count($p);
                             $i = 0;
-                            foreach ($p as $rows) {
-                                if (++$i === $numItems) {
-                                    echo '<li class="last">';
+                            if (is_array($p)) {
+                                foreach ($p as $rows) {
+                                    echo $rows;
+                                    if (++$i === $numItems) {
+                                        echo '<li class="last">';
                                         echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" width="100" height="160"/></a>';
-                                    echo '</li>';
-                                } else {
-                                    echo '<li>';
+                                        echo '</li>';
+                                    } else {
+                                        echo '<li>';
                                         echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" width="100" height="160"/></a>';
-                                    echo '</li>';
-                                    echo "\n";
+                                        echo '</li>';
+                                        echo "\n";
+                                    }
                                 }
                             }
                             ?>

@@ -6,13 +6,13 @@ class DB {
     static private $_instance;
     private $_connection;
 
-
     private function __construct() {
-        $servername = $_ENV["MYSQL_PORT_3306_TCP_ADDR"];
-        $username = "root";
-        $password = $_ENV["MYSQL_ENV_MYSQL_ROOT_PASSWORD"];
+        $host = $_ENV["DB_HOST"];
+        $username = $_ENV["DB_USER"];
+        $password = $_ENV["DB_PASSWORD"];
+        $dbname = $_ENV["DB_NAME"];
 
-        $this->_connection = new mysqli($servername, $username, $password, "myapp");
+        $this->_connection = new mysqli($host, $username, $password, $dbname);
         if ($this->_connection->connect_error) {
             die("Connection failed: " . $this->_connection->connect_error);
         }
