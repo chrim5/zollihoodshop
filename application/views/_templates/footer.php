@@ -100,7 +100,6 @@
                             $i = 0;
                             if (is_array($p)) {
                                 foreach ($p as $rows) {
-                                    echo $rows;
                                     if (++$i === $numItems) {
                                         echo '<li class="last">';
                                         echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" width="100" height="160"/></a>';
