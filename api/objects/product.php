@@ -40,6 +40,10 @@ class Product{
 
         return $products;
 
+        // close connection
+        $stmt->close();
+        $db->closeConnection();
+
     }
 
     // used when filling up the update product form
@@ -74,20 +78,18 @@ class Product{
         if (!$stmt ) return false;
 
         $result = $stmt->get_result();
-        //$data->fetch_assoc();
 
         $row = $result->fetch_array();
-        /*
-        while ($col = $result->fetch_array()) {
-            $row[] = $col;
-            error_log(implode($col));
-        }
-        */
+
         $this->name = $row['name'];
         $this->price = $row['price'];
         $this->description = $row['description'];
         $this->category_id = $row['category_id'];
         $this->category_name = $row['category_name'];
+
+        // close connection
+        $result->close();
+        $db->closeConnection();
 
     }
 
@@ -105,12 +107,16 @@ class Product{
         $stmt = $db->getConnection()->prepare('INSERT INTO
             products(name,description,price,category_id,created) 
             VALUES (?, ?, ?, ?, ?)');
-        $stmt->bind_param('siiis', $this->name, $this->price, $this->description,
+        $stmt->bind_param('ssiis', $this->name, $this->description, $this->price,
             $this->category_id, $this->created);
 
         $stmt->execute();
         if (!$stmt) return false;
         return true;
+
+        // close connection
+        $stmt->close();
+        $db->closeConnection();
          
     }
 }

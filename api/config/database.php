@@ -28,5 +28,9 @@ class Database {
     public function getConnection(){
         return $this->_connection;
     }
+
+    public function closeConnection(){
+        return mysqli_close($this->_connection);
+    }
 }
 ?>
