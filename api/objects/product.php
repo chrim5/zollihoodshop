@@ -254,7 +254,7 @@ class Product{
         $stmt->execute();
 
         // return values from database
-        return $stmt->get_result()->fetch_array();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
         // close connection
         $stmt->close();
