@@ -35,7 +35,7 @@ class Product{
         if (!$stmt) return null;
  
         while($product = $stmt->fetch_object(get_class())){
-         $products[] = $product;
+            $products[] = $product;
         }
 
         return $products;
@@ -72,9 +72,6 @@ class Product{
         // execute query
         $stmt->execute();
 
-        // store
-        //$stmt->store_result();
-
         if (!$stmt ) return false;
 
         $result = $stmt->get_result();
@@ -89,6 +86,45 @@ class Product{
 
         // close connection
         $result->close();
+        $db->closeConnection();
+
+    }
+
+    // update the product
+    function update(){
+
+        // update query
+        $query = "UPDATE
+                products
+            SET
+                name = ?,
+                price = ?,
+                description = ?,
+                category_id = ?
+            WHERE
+                id = ?";
+
+        // prepare query statement
+        $db = Database::getInstance();
+        $stmt = $db->getConnection()->prepare($query);
+
+        // sanitize
+        $this->name=htmlspecialchars(strip_tags($this->name));
+        $this->price=htmlspecialchars(strip_tags($this->price));
+        $this->description=htmlspecialchars(strip_tags($this->description));
+        $this->category_id=htmlspecialchars(strip_tags($this->category_id));
+        $this->id=htmlspecialchars(strip_tags($this->id));
+
+        // bind params
+        $stmt->bind_param('sisii', $this->name, $this->price, $this->description,
+            $this->category_id, $this->id);
+
+        // execute the query
+        $stmt->execute();
+        if (!$stmt ) return false;
+
+        // close connection
+        $stmt->close();
         $db->closeConnection();
 
     }
