@@ -32,7 +32,7 @@ class Product{
  
         $db = Database::getInstance();
         $stmt = $db->getConnection()->query($query);
-        if (!$stmt) return null;
+        if (!$stmt) return false;
  
         while($product = $stmt->fetch_object(get_class())){
             $products[] = $product;
@@ -154,5 +154,126 @@ class Product{
         $stmt->close();
         $db->closeConnection();
          
+    }
+
+    // delete the product
+    function delete(){
+
+        // delete query
+        $query = "DELETE FROM products WHERE id = ?";
+
+        // prepare query statement
+        $db = Database::getInstance();
+        $stmt = $db->getConnection()->prepare($query);
+
+        // sanitize
+        $this->id=htmlspecialchars(strip_tags($this->id));
+
+        // bind id of record to delete
+        $stmt->bind_param('i', $this->id);
+
+        // execute query
+        $stmt->execute();
+        if (!$stmt) return false;
+        return true;
+
+        // close connection
+        $stmt->close();
+        $db->closeConnection();
+    }
+
+    // search products
+    function search($keywords){
+
+        // select all query
+        $query = "SELECT
+                c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
+            FROM
+                products p
+                LEFT JOIN
+                    categories c
+                        ON p.category_id = c.id
+            WHERE
+                p.name LIKE ? OR p.description LIKE ? OR c.name LIKE ?
+            ORDER BY
+                p.created DESC";
+
+        // prepare query statement
+        $db = Database::getInstance();
+        $stmt = $db->getConnection()->prepare($query);
+
+        // sanitize
+        $keywords=htmlspecialchars(strip_tags($keywords));
+        $keywords = "%{$keywords}%";
+
+        // bind
+        $stmt->bind_param('sss', $keywords, $keywords, $keywords);
+        if (!$stmt) return false;
+
+        // execute query
+        $stmt->execute();
+
+        if (!$stmt ) return false;
+
+        $stmt= $stmt->get_result();
+
+        $products = array();
+        while($product = $stmt->fetch_array()){
+            $products[] = $product;
+        }
+
+        return $products;
+
+        // close connection
+        $stmt->close();
+        $db->closeConnection();
+    }
+
+    // read products with pagination
+    public function readPaging($from_record_num, $records_per_page){
+        // select query
+        $query = "SELECT
+                c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
+            FROM
+                products p
+                LEFT JOIN
+                    categories c
+                        ON p.category_id = c.id
+            ORDER BY p.created DESC
+            LIMIT ?, ?";
+
+        // prepare query statement
+        $db = Database::getInstance();
+        $stmt = $db->getConnection()->prepare($query);
+
+        // bind variable values
+        $stmt->bind_param('ii', $from_record_num, $records_per_page);
+        if (!$stmt) return false;
+
+        // execute query
+        $stmt->execute();
+
+        // return values from database
+        return $stmt->get_result()->fetch_array();
+
+        // close connection
+        $stmt->close();
+        $db->closeConnection();
+    }
+
+    // used for paging products
+    public function count(){
+        $query = "SELECT COUNT(*) as total_rows FROM products";
+
+        // prepare query statement
+        $db = Database::getInstance();
+        $stmt = $db->getConnection()->prepare($query);
+        $stmt->execute();
+        if (!$stmt ) return false;
+
+        $result = $stmt->get_result();
+        $row = $result->fetch_array();
+
+        return $row['total_rows'];
     }
 }
