@@ -9,7 +9,8 @@ foreach ($products as $rows) :?>
                 <img src="/product/image/<?php echo $rows->id; ?>" width="130">
                 <?php
                     if ($_SESSION['admin'])
-                        echo '<a href="/product/addimage/' . $rows->id . '">change image</a>';
+                        echo '<a href="/product/addimage/' . $rows->id . '">change image</a></br>';
+                        echo '<a href="/product/update/' . $rows->id . '">update product</a>';
                 ?>
             </div>
             <div class="rightiteminfo">

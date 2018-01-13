@@ -45,19 +45,7 @@
 							        echo "<option value=\"\">$value</option>";
                                 }
                             ?>
-						</select>
-
-							<div class="inline-field">
-								<label><?php echo $lang['SEARCH_PRICE']; ?></label>
-								<select class="field small-field">
-								<option value="">$10</option>
-							</select>
-								<label><?php echo $lang['SEARCH_PRICE_TO']; ?></label>
-								<select class="field small-field">
-								<option value="">$50</option>
-							</select>
 							</div>
-
 							<input type="submit" class="search-submit" value=<?php echo $lang['SEARCH']; ?> />
 						</form>
 					</div>
@@ -143,7 +131,7 @@
                 <a href="application/views/_templates/lang.php?lang=de"><img src="/css/images/de.png" /></a>
 			</p>
 			<p class="right">
-				&copy; 2016 MMs Book Store 
+				&copy; 2018 Zollihood Shop
 			</p>
 		</div>
 		<!-- End Footer -->

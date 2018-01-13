@@ -89,4 +89,27 @@ class Product {
         $Product->createNew($u);
         header('Location: /product' );
     }
+
+    public function update($productid) {
+        Application::needsAdmin();
+        require APP . 'models/product.php';
+        $Product = new ProductModel();
+        $item = $Product->getProductById($productid);
+        $categories = $Product->getCategories();
+        require_once APP . 'models/product.class.php';
+        require APP . 'views/_templates/header.php';
+        require APP . 'views/product/update.php';
+        require APP . 'views/_templates/footer.php';
+
+        $u = new ProductObj();
+        $u->name = $_POST["name"];
+        $u->details = $_POST["details"];
+        $u->price = $_POST["price"];
+        $u->reducedprice = ($_POST["reducedprice"]);
+        $u->category = ($_POST["category"]);
+
+        $Product = new ProductModel();
+        $Product->createNew($u);
+        //header('Location: /product' );
+    }
 }

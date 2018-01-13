@@ -38,7 +38,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Art and Photography'),(2,'Food and Wine'),(3,'History'),(4,'Literature and Fiction'),(5,'Sci-Fi and Fantasy'),(6,'Technology');
+INSERT INTO `categories` VALUES (1,'Music'),(2,'Games'),(3,'Electronics'),(4,'Clothing'),(5,'Outdoor & Sports'),(6,'Miscellaneous');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,5 +120,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-11-04 17:05:00

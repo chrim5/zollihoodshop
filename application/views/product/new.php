@@ -11,10 +11,10 @@
   <select name="category" required>
     <option selected="1">Choose one</option>
     <?php
-foreach($categories as $c) { ?>
+        foreach($categories as $c) { ?>
     <option value="<?php echo $c->id?>"><?php echo $c->name ?></option>
-<?php
-} ?>
+    <?php
+        } ?>
   </select>
   <input type="submit" value="Submit" class="search-submit">
 </form>
