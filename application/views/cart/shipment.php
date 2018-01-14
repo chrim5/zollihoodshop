@@ -1,11 +1,11 @@
-<b>Your order details:</b>
+<b><?php echo $lang['SHOPPING_CART_ORDER'];?>:</b>
 <table>
-    <thead align="left" style="display: table-header-group">
+    <thead align="left" style="display: table-header-group; width: 100%">
     <tr>
-        <th>Num </th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category</th>
+        <th><?php echo $lang['SHOPPING_CART_COUNT'];?></th>
+        <th><?php echo $lang['SHOPPING_CART_PRODUCT_NAME'];?></th>
+        <th><?php echo $lang['SHOPPING_CART_PRICE'];?></th>
+        <th><?php echo $lang['SHOPPING_CART_CATEGORY_NAME'];?></th>
     </tr>
     </thead>
     <tbody>

@@ -90,13 +90,15 @@ class Cart
         $message .= '<h2>Your delivery option: </h2>' . $_POST['shipment'];
         $message .= '</body></html>';
         $headers = 'To:' . $_SESSION['username'] . "\r\n" .
-            'From: webmaster@mmbooks.press' . "\r\n" .
-            'Reply-To: webmaster@mmbooks.press' . "\r\n" .
+            'From: webmaster@zollihood.com' . "\r\n" .
+            'Reply-To: webmaster@zollihood.com' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n" .
             'Content-Type: text/html; charset=UTF-8' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
         // Send mail
         mail($to, $subject, $message, $headers);
+
+        $Product->clearAll();
     }
 
     public function shipment()

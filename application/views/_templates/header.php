@@ -29,7 +29,7 @@
 
 			<!-- Cart -->
 			<div id="cart">
-				<a href="/index.php" class="cart-link"><?php echo $lang['SHOPPING_CART']; ?></a>
+				<a href="/cart/index" class="cart-link"><?php echo $lang['SHOPPING_CART']; ?></a>
 				<div class="cl">&nbsp;</div>
 				<span><?php echo $lang['SHOPPING_CART_ARTICLE']; ?>: <strong id="cartproducts">0</strong></span>
 				<span>Total: <strong id="cartprice">0.00 CHF</strong></span>

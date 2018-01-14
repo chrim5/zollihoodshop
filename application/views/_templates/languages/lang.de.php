@@ -33,3 +33,13 @@ $lang['CATEGORY'] = 'Kategorien';
 // Shopping cart
 $lang['SHOPPING_CART'] = 'Warenkorb';
 $lang['SHOPPING_CART_ARTICLE'] = 'Artikel';
+$lang['SHOPPING_CART_PRICE'] = 'Preis';
+$lang['SHOPPING_CART_COUNT'] = 'Menge';
+$lang['SHOPPING_CART_PRODUCT_NAME'] = 'Produkt';
+$lang['SHOPPING_CART_CATEGORY_NAME'] = 'Kategorie';
+$lang['SHOPPING_CART_ORDER'] = 'Details Ihrer Bestellung';
+// Account
+$lang['ACCOUNT_FIRSTNAME'] = 'Vorname';
+$lang['ACCOUNT_LASTNAME'] = 'Nachname';
+$lang['ACCOUNT_USERNAME'] = 'Benutzername';
+$lang['ACCOUNT_PASSWORD'] = 'Passwort';

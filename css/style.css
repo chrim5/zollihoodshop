@@ -595,6 +595,14 @@ h3.ico4 {
 .rightiteminfo {
     overflow: hidden; /* if you don't want #second to wrap below #first */
 }
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px;
+	text-align: left;
+}
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
       #sidebar { display: none; }  /* show it on small screens */

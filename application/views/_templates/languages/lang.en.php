@@ -8,7 +8,7 @@ Language: English
 $lang = array();
  
 // Navigation top
-$lang['MENU_HOME'] = 'Index';
+$lang['MENU_HOME'] = 'Home';
 $lang['MENU_PRODUCTS'] = 'Products';
 $lang['MENU_ACCOUNT'] = 'Account';
 $lang['MENU_CONTACT_US'] = 'Contact';
@@ -33,3 +33,13 @@ $lang['CATEGORY'] = 'Categories';
 // Shopping cart
 $lang['SHOPPING_CART'] = 'Shopping cart';
 $lang['SHOPPING_CART_ARTICLE'] = 'Article';
+$lang['SHOPPING_CART_PRICE'] = 'Price';
+$lang['SHOPPING_CART_COUNT'] = 'Amount';
+$lang['SHOPPING_CART_PRODUCT_NAME'] = 'Product';
+$lang['SHOPPING_CART_CATEGORY_NAME'] = 'Category';
+$lang['SHOPPING_CART_ORDER'] = 'Your order details';
+// Account
+$lang['ACCOUNT_FIRSTNAME'] = 'First name';
+$lang['ACCOUNT_LASTNAME'] = 'Last name';
+$lang['ACCOUNT_USERNAME'] = 'User name';
+$lang['ACCOUNT_PASSWORD'] = 'Password';

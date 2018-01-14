@@ -1,11 +1,11 @@
-this is the cart view
+<h1><?php echo $lang['SHOPPING_CART'];?>:</h1></br>
 <table>
-  <thead align="left" style="display: table-header-group">
+  <thead align="left" style="display: table-header-group; width: 100%">
   <tr>
-     <th>Num </th>
-     <th>Name</th>
-     <th>Price</th>
-     <th>Category</th>
+     <th><?php echo $lang['SHOPPING_CART_COUNT'];?></th>
+     <th><?php echo $lang['SHOPPING_CART_PRODUCT_NAME'];?></th>
+     <th><?php echo $lang['SHOPPING_CART_PRICE'];?></th>
+     <th><?php echo $lang['SHOPPING_CART_CATEGORY_NAME'];?></th>
   </tr>
   </thead>
 <tbody>
@@ -21,8 +21,8 @@ foreach ($cart as $rows) :?>
 <?php endforeach;?>
 </tbody>
 </table>
-<a href="cart/clear" class="button">Clear</a>
+<a href="/cart/clear" class="button">Clear</a>
 <?php
     if (!empty($cart))
-        echo '<a href="cart/shipment" class="button">Order</a>';
+        echo '<a href="/cart/shipment" class="button">Order</a>';
 ?>
