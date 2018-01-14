@@ -1,8 +1,7 @@
 <?php
 class User 
 {
-    public function index()
-    {
+    public function index() {
         require APP . 'models/user.php';
         
         $User = new UserModel();
@@ -13,8 +12,7 @@ class User
         require APP . 'views/_templates/footer.php';
     }
 
-    public function testsession()
-    {
+    public function testsession() {
         Application::needsAdmin();
         session_start();
         var_dump($_SESSION);
@@ -25,23 +23,22 @@ class User
         }
     }
 
-    public function register()
-    {
+    public function register() {
         require APP . 'views/_templates/header.php';
         require APP . 'views/user/register.php';
         require APP . 'views/_templates/footer.php';
     }
 
-    public function create()
-    {
+    public function create() {
         require APP . 'models/user.php';
         require_once APP . 'models/user.class.php';
+        require  APP . 'utilities/sanitize.inc.php';
 
         $u = new UserObj();
-        $u->email = $_POST["email"];
-        $u->username = $_POST["username"];
-        $u->firstname = $_POST["firstname"];
-        $u->lastname = $_POST["lastname"];
+        $u->email = sanitize_html_string($_POST["email"]);
+        $u->username = sanitize_html_string($_POST["username"]);
+        $u->firstname = sanitize_html_string($_POST["firstname"]);
+        $u->lastname = sanitize_html_string($_POST["lastname"]);
         $u->savePassword($_POST["password"]);
     
         $User = new UserModel();
@@ -49,16 +46,16 @@ class User
         header('Location: /' );
     }
 
-    public function update()
-    {
+    public function update() {
         require APP . 'models/user.php';
         require_once APP . 'models/user.class.php';
+        require  APP . 'utilities/sanitize.inc.php';
 
         $u = new UserObj();
-        $u->email = $_POST["email"];
-        $u->username = $_POST["username"];
-        $u->firstname = $_POST["firstname"];
-        $u->lastname = $_POST["lastname"];
+        $u->email = sanitize_html_string($_POST["email"]);
+        $u->username = sanitize_html_string($_POST["username"]);
+        $u->firstname = sanitize_html_string($_POST["firstname"]);
+        $u->lastname = sanitize_html_string($_POST["lastname"]);
         $u->savePassword($_POST["password"]);
 
         $User = new UserModel();
@@ -66,15 +63,15 @@ class User
         header('Location: /' );
     }
 
-    public function login()
-    {
+    public function login() {
         session_start();
 
         require APP . 'models/user.php';
+        require  APP . 'utilities/sanitize.inc.php';
         
         $User = new UserModel();
-        $user = $User->getUser($_POST['username']);
-        if (password_verify($_POST['password'],$user->getPassword()))
+        $user = $User->getUser(sanitize_sql_string($_POST['username']));
+        if (password_verify(sanitize_sql_string($_POST['password']),$user->getPassword()))
         {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['email'] = $user->getEmail();
@@ -90,8 +87,7 @@ class User
         }
     }
 
-    public function logout()
-    {
+    public function logout() {
         session_start();
 
         $_SESSION = array();

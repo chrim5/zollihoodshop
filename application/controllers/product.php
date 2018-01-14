@@ -75,15 +75,16 @@ class Product {
 
     public function create() {
         Application::needsAdmin();
+        require  APP . 'utilities/sanitize.inc.php';
         require APP . 'models/product.php';
         require_once APP . 'models/product.class.php';
         
         $u = new ProductObj();
-        $u->name = $_POST["name"];
-        $u->details = $_POST["details"];
-        $u->price = $_POST["price"];
-        $u->reducedprice = ($_POST["reducedprice"]);
-        $u->category = ($_POST["category"]);
+        $u->name = sanitize_html_string($_POST["name"]);
+        $u->details = sanitize_html_string($_POST["details"]);
+        $u->price = sanitize_int($_POST["price"]);
+        $u->reducedprice = sanitize_int($_POST["reducedprice"]);
+        $u->category = sanitize_int($_POST["category"]);
     
         $Product = new ProductModel();
         $Product->createNew($u);
@@ -100,16 +101,24 @@ class Product {
         require APP . 'views/_templates/header.php';
         require APP . 'views/product/update.php';
         require APP . 'views/_templates/footer.php';
+    }
+
+    public function updateItem() {
+        Application::needsAdmin();
+        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'models/product.php';
+        require_once APP . 'models/product.class.php';
 
         $u = new ProductObj();
-        $u->name = $_POST["name"];
-        $u->details = $_POST["details"];
-        $u->price = $_POST["price"];
-        $u->reducedprice = ($_POST["reducedprice"]);
-        $u->category = ($_POST["category"]);
+        $u->id = $_POST["id"];
+        $u->name = sanitize_html_string($_POST["name"]);
+        $u->details = sanitize_html_string($_POST["details"]);
+        $u->price = sanitize_int($_POST["price"]);
+        $u->reducedprice = sanitize_int($_POST["reducedprice"]);
+        $u->category = sanitize_int($_POST["category"]);
 
         $Product = new ProductModel();
-        $Product->createNew($u);
-        //header('Location: /product' );
+        $Product->updateProduct($u);
+        header('Location: /product' );
     }
 }

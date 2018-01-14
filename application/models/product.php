@@ -85,6 +85,21 @@ class ProductModel extends Model
         $stmt->execute();
     }
 
+    public function updateProduct($product){
+        $stmt = $this->db->prepare('UPDATE products SET 
+              name = ?,
+              details = ?,
+              price = ?,
+              reducedprice = ?,
+              category = ?
+              WHERE
+                  id = ?');
+        error_log($product->id);
+        $stmt->bind_param('ssiiii', $product->name, $product->details, $product->price,
+            $product->reducedprice, $product->category, $product->id);
+        $stmt->execute();
+    }
+
     public function getBinary($productid){
         $stmt = $this->db->prepare("SELECT imageblob FROM products WHERE id=?"); 
         $stmt->bind_param("i", $productid);

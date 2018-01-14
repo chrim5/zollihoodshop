@@ -103,7 +103,7 @@ h1#logo a {
 	display: block;
 	height: 64px;
 	text-indent: -4000px;
-	background: url(images/logo_zollihoodshop.png);
+	/*background: url(images/zoll);*/
 }
 
 .shell {
