@@ -11,7 +11,7 @@ foreach ($products as $rows) :?>
                     if ($_SESSION['admin']) {
                         echo '<a href="/product/addimage/' . $rows->id . '">change image</a></br>';
                         echo '<a href="/product/update/' . $rows->id . '">update product</a>';
-                    }
+                    }g
                 ?>
             </div>
             <div class="rightiteminfo">
