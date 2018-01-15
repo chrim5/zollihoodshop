@@ -24,7 +24,7 @@
  * possible license violation.
  */
 ///////////////////////////////////////
-// sanitize.inc.php
+// sanitize.php
 // Sanitization functions for PHP
 // by: Gavin Zuchlinski, Jamie Pratt, Hokkaido
 // webpage: http://libox.net
@@ -91,7 +91,7 @@ function nice_addslashes($string)
 function my_utf8_decode($string)
 {
 return strtr($string,
-  "???????ҐµАБВГДЕЖЗИЙКЛМНОПРСТУФХЦШЩЪЫЬЭЯабвгдежзийклмнопрстуфхцшщъыьэя",
+  "???????пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
   "SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
 }
 

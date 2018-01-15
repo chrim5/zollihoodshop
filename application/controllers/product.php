@@ -75,7 +75,7 @@ class Product {
 
     public function create() {
         Application::needsAdmin();
-        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'utilities/sanitize.php';
         require APP . 'models/product.php';
         require_once APP . 'models/product.class.php';
         
@@ -105,7 +105,7 @@ class Product {
 
     public function updateItem() {
         Application::needsAdmin();
-        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'utilities/sanitize.php';
         require APP . 'models/product.php';
         require_once APP . 'models/product.class.php';
 

@@ -32,7 +32,7 @@ class User
     public function create() {
         require APP . 'models/user.php';
         require_once APP . 'models/user.class.php';
-        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'utilities/sanitize.php';
 
         $u = new UserObj();
         $u->email = sanitize_html_string($_POST["email"]);
@@ -49,7 +49,7 @@ class User
     public function update() {
         require APP . 'models/user.php';
         require_once APP . 'models/user.class.php';
-        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'utilities/sanitize.php';
 
         $u = new UserObj();
         $u->email = sanitize_html_string($_POST["email"]);
@@ -67,7 +67,7 @@ class User
         session_start();
 
         require APP . 'models/user.php';
-        require  APP . 'utilities/sanitize.inc.php';
+        require APP . 'utilities/sanitize.php';
         
         $User = new UserModel();
         $user = $User->getUser(sanitize_sql_string($_POST['username']));
