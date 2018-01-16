@@ -64,7 +64,7 @@ class Cart
         $priceTotal = $Product->getCartPriceTotal();
 
         // Create confirmation mail
-        $to      = strip_tags($_SESSION['username']);
+        $to      = strip_tags($_SESSION['email']);
         $subject = 'Your order confirmation on Zollihood Shop';
 
         $message = '<html><body>';
@@ -89,7 +89,7 @@ class Cart
         $message .= '<h3>Total: </h3>' . $priceTotal;
         $message .= '<h2>Your delivery option: </h2>' . $_POST['shipment'];
         $message .= '</body></html>';
-        $headers = 'To:' . $_SESSION['username'] . "\r\n" .
+        $headers = 'To:' . $_SESSION['email'] . "\r\n" .
             'From: webmaster@zollihood.com' . "\r\n" .
             'Reply-To: webmaster@zollihood.com' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n" .
