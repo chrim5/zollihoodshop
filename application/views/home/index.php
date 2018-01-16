@@ -5,9 +5,12 @@
                 <?php
                 require_once APP . 'models/product.php';
                 $p = ProductObj::getProducts();
-                $hotprice = 15;
                 foreach ($p as $rows) {
-                    if ($rows->price != null && $rows->price < $hotprice) {
+                    $hotprice = 0;
+                    if($rows->reducedprice != null && $rows->reducedprice != 0) {
+                        $hotprice = 100-100/$rows->price*$rows->reducedprice;
+                    }
+                    if ($rows->price != null && $hotprice >= 20) {
                         echo '<li class="last">';
                         echo '<a href="/product/category/' . $rows->category . '"><img src="/product/image/' . $rows->id . '" height="252"/></a>';
                         echo '</li>';
