@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  * Copyright (c) 2002,2003 Free Software Foundation
  * developed under the custody of the
@@ -268,4 +268,3 @@ function check($input, $flags, $min='', $max='')
     return FALSE;
   return TRUE;
 }
-?>
