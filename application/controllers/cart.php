@@ -65,7 +65,7 @@ class Cart
 
         // Create confirmation mail
         $to      = strip_tags($_SESSION['username']);
-        $subject = 'Your order confirmation on mmbooks.press';
+        $subject = 'Your order confirmation on Zollihood Shop';
 
         $message = '<html><body>';
         $message .= '<table>
