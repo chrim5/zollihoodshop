@@ -2,7 +2,7 @@
 <table>
     <thead align="left" style="display: table-header-group; width: 100%">
     <tr>
-        <th><?php echo $lang['SHOPPING_CART_COUNT'];?></th>
+        <th><?php echo $lang['SHOPPING_CART_PRODUCT_ID'];?></th>
         <th><?php echo $lang['SHOPPING_CART_PRODUCT_NAME'];?></th>
         <th><?php echo $lang['SHOPPING_CART_PRICE'];?></th>
         <th><?php echo $lang['SHOPPING_CART_CATEGORY_NAME'];?></th>
