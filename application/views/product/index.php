@@ -18,7 +18,11 @@ foreach ($products as $rows) :?>
                 <h2><?php echo $rows->name; ?></h2>
                 <h3><?php echo $rows->price; ?>.- CHF</h3>
                 <p><?php echo $rows->details; ?></p>
-                <a href="/cart/add/<?php echo $rows->id; ?>">add to cart</a>
+                <?php
+                    if ($_SESSION['username']) {
+                    echo '<a href="/cart/add/' . $rows->id . '">add to cart</a>';
+                    }
+                ?>
             </div>
         </div>
     </li>
